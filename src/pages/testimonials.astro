@@ -1,0 +1,58 @@
+---
+import { url } from '../utils/paths';
+import BaseLayout from '../layouts/BaseLayout.astro';
+import CTABanner from '../components/CTABanner.astro';
+
+const testimonials = [
+  { quote: "The team at Irrigators got our system up and running just in time for summer. Super friendly, on time, and knew exactly what they were doing. Highly recommend!", author: "Jamie R.", location: "Nanaimo", rating: 5 },
+  { quote: "We had no idea where to start with landscape lighting, but they designed a beautiful layout and installed everything in one afternoon. The yard looks incredible.", author: "Kevin M.", location: "Parksville", rating: 5 },
+];
+---
+
+<BaseLayout
+  title="Customer Testimonials | The Irrigators — Vancouver Island"
+  description="Read what Vancouver Island homeowners and property managers say about The Irrigators. Real reviews from real customers across central Vancouver Island."
+>
+  <section class="relative overflow-hidden py-16 lg:py-20 px-4">
+    <div class="absolute inset-0 bg-dark-950"></div>
+    <div class="absolute inset-0 bg-gradient-to-br from-lime-500/8 via-transparent to-transparent"></div>
+    <div class="relative max-w-7xl mx-auto">
+      <h1 class="text-4xl lg:text-5xl font-bold text-white mb-4" style="font-family: Montserrat, sans-serif;">What Our Customers Are Saying</h1>
+      <p class="text-gray-400 text-lg max-w-2xl">Real feedback from homeowners and property managers across Vancouver Island.</p>
+    </div>
+  </section>
+
+  <section class="py-16 lg:py-24 px-4">
+    <div class="max-w-4xl mx-auto">
+      <div class="space-y-6">
+        {testimonials.map((t) => (
+          <div class="glass rounded-2xl p-8">
+            <div class="flex gap-1 mb-4">
+              {Array.from({ length: t.rating }).map(() => (
+                <svg class="w-5 h-5 text-lime-500" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+              ))}
+            </div>
+            <blockquote class="text-gray-300 text-lg leading-relaxed mb-4 italic">"{t.quote}"</blockquote>
+            <div class="text-sm">
+              <span class="text-white font-medium">{t.author}</span>
+              <span class="text-gray-500"> — {t.location}</span>
+            </div>
+          </div>
+        ))}
+      </div>
+
+      <div class="mt-12 text-center">
+        <div class="glass-lime rounded-2xl p-8">
+          <h2 class="text-xl font-bold text-white mb-2" style="font-family: Montserrat, sans-serif;">Had a Great Experience?</h2>
+          <p class="text-gray-400 mb-4">We'd love to hear from you. Leave us a review on Google.</p>
+          <a href="#" class="inline-flex items-center gap-2 bg-lime-500/90 text-dark-900 px-6 py-3 rounded-lg font-semibold hover:bg-lime-400 transition-colors">
+            Leave Us a Review on Google
+            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"/></svg>
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <CTABanner />
+</BaseLayout>

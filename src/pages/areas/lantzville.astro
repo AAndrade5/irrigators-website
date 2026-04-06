@@ -1,0 +1,83 @@
+---
+import { url } from '../../utils/paths';
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import CTABanner from '../../components/CTABanner.astro';
+import FAQ from '../../components/FAQ.astro';
+
+const schema = [
+  {
+    "@context": "https://schema.org",
+    "@type": "Service",
+    "serviceType": "Irrigation Services",
+    "provider": { "@id": "https://irrigators.ca/#business" },
+    "areaServed": { "@type": "City", "name": "Lantzville", "containedInPlace": { "@type": "State", "name": "British Columbia" } },
+    "description": "Professional irrigation and landscape lighting services in Lantzville, BC."
+  }
+];
+
+const faqs = [
+  { question: "Do you service larger rural properties in Lantzville?", answer: "Yes. Many Lantzville properties are on larger lots — half-acre, one-acre, or more. We design and install systems for properties of all sizes, including multi-zone setups with dedicated garden beds, orchard areas, and large lawn sections. Bigger properties are our specialty." },
+  { question: "Is Lantzville water pressure sufficient for irrigation?", answer: "Water pressure varies across Lantzville. Some areas have excellent municipal pressure, while others — especially properties on higher ground or at the end of supply lines — can be lower. We test pressure on every job and size heads and zones accordingly to ensure proper coverage." },
+  { question: "Can you install landscape lighting on my Lantzville property?", answer: "Absolutely. Lantzville's mature trees, ocean-view gardens, and long driveways are perfect for landscape lighting. We install low-voltage LED path lights, uplights, and accent lighting that highlights your property's best features while improving safety and security." },
+  { question: "How far is Lantzville from your base?", answer: "Lantzville is about 25 minutes from our shop in Coombs. We service Lantzville regularly and are often in the area alongside our Nanaimo work, so response times are excellent." },
+];
+---
+
+<BaseLayout
+  title="Irrigation Services in Lantzville, BC | The Irrigators"
+  description="Professional irrigation and landscape lighting in Lantzville, BC. Spring start-ups, winter blowouts, repairs, and new installations. Serving Lantzville since 1990."
+  schema={schema}
+>
+  <section class="relative overflow-hidden py-16 lg:py-20 px-4">
+    <div class="absolute inset-0 bg-dark-950"></div>
+    <div class="absolute inset-0 bg-gradient-to-br from-lime-500/8 via-transparent to-transparent"></div>
+    <div class="relative max-w-7xl mx-auto">
+      <nav class="text-gray-500 text-sm mb-4">
+        <a href={url('/')} class="hover:text-lime-400">Home</a> / <a href={url('/areas/')} class="hover:text-lime-400">Service Areas</a> / Lantzville
+      </nav>
+      <h1 class="text-4xl lg:text-5xl font-bold text-white mb-4" style="font-family: Montserrat, sans-serif;">Irrigation Services in Lantzville, BC</h1>
+      <p class="text-gray-400 text-lg max-w-2xl">Lantzville's larger estate and rural properties need irrigation systems built to handle the scale. We design, install, and maintain systems for properties of every size in this beautiful coastal community.</p>
+    </div>
+  </section>
+
+  <section class="py-16 lg:py-24 px-4">
+    <div class="max-w-4xl mx-auto">
+      <h2 class="text-2xl font-bold text-white mb-4" style="font-family: Montserrat, sans-serif;">Irrigation for Lantzville's Estate Properties</h2>
+      <p class="text-gray-400 leading-relaxed mb-6">Lantzville is a small, close-knit coastal community just north of Nanaimo where many homeowners enjoy larger lots with mature landscaping, ocean views, and established gardens. These properties require more than a basic residential irrigation setup — they need multi-zone systems designed for diverse planting areas, from large lawns and perennial beds to vegetable gardens and orchard trees.</p>
+      <p class="text-gray-400 leading-relaxed mb-6">We've been working on Lantzville properties since 1990, and we understand the unique conditions here: variable water pressure depending on elevation, rocky ground in some areas that requires careful pipe routing, and the exposed coastal conditions that can affect sprinkler performance. Whether you need a full new installation for your estate property or seasonal maintenance on an existing system, our team handles it all.</p>
+
+      <h2 class="text-2xl font-bold text-white mb-4 mt-10" style="font-family: Montserrat, sans-serif;">Services Available in Lantzville</h2>
+      <div class="grid grid-cols-1 sm:grid-cols-2 gap-3 mb-10">
+        <a href={url('/services/spring-startups/')} class="flex items-center gap-2 text-gray-400 hover:text-lime-400 transition-colors p-3 rounded-lg hover:bg-white/5">
+          <svg class="w-4 h-4 text-lime-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg>
+          Spring Irrigation Start-Ups
+        </a>
+        <a href={url('/services/winter-blowouts/')} class="flex items-center gap-2 text-gray-400 hover:text-lime-400 transition-colors p-3 rounded-lg hover:bg-white/5">
+          <svg class="w-4 h-4 text-lime-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg>
+          Winter Irrigation Blowouts
+        </a>
+        <a href={url('/services/repairs/')} class="flex items-center gap-2 text-gray-400 hover:text-lime-400 transition-colors p-3 rounded-lg hover:bg-white/5">
+          <svg class="w-4 h-4 text-lime-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg>
+          Repairs & Service Calls
+        </a>
+        <a href={url('/services/installations/')} class="flex items-center gap-2 text-gray-400 hover:text-lime-400 transition-colors p-3 rounded-lg hover:bg-white/5">
+          <svg class="w-4 h-4 text-lime-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg>
+          New Sprinkler Installations
+        </a>
+        <a href={url('/services/landscape-lighting/')} class="flex items-center gap-2 text-gray-400 hover:text-lime-400 transition-colors p-3 rounded-lg hover:bg-white/5">
+          <svg class="w-4 h-4 text-lime-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg>
+          Landscape Lighting
+        </a>
+        <a href={url('/services/maintenance-plans/')} class="flex items-center gap-2 text-gray-400 hover:text-lime-400 transition-colors p-3 rounded-lg hover:bg-white/5">
+          <svg class="w-4 h-4 text-lime-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg>
+          Annual Maintenance Plans
+        </a>
+      </div>
+
+      <h2 class="text-2xl font-bold text-white mb-6" style="font-family: Montserrat, sans-serif;">Frequently Asked Questions</h2>
+      <FAQ items={faqs} />
+    </div>
+  </section>
+
+  <CTABanner title="Get a Free Estimate for Your Lantzville Property" subtitle="Estate lots, rural acreages, or standard residential — we design irrigation systems to match your property. Call us or request a free estimate." />
+</BaseLayout>

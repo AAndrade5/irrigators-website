@@ -1,0 +1,83 @@
+---
+import { url } from '../utils/paths';
+import BaseLayout from '../layouts/BaseLayout.astro';
+import ContactForm from '../components/ContactForm.tsx';
+
+const schema = [
+  {
+    "@context": "https://schema.org",
+    "@type": "ContactPage",
+    "name": "Contact The Irrigators",
+    "description": "Contact The Irrigators for irrigation services on Vancouver Island. Free estimates, service calls, and consultations."
+  }
+];
+---
+
+<BaseLayout
+  title="Contact The Irrigators | Vancouver Island Irrigation Services"
+  description="Contact The Irrigators for a free estimate, service call, or consultation. Phone: 250-468-7041. Based in Coombs, serving Ladysmith to Bowser."
+  schema={schema}
+>
+  <section class="relative overflow-hidden py-16 lg:py-20 px-4">
+    <div class="absolute inset-0 bg-dark-950"></div>
+    <div class="absolute inset-0 bg-gradient-to-br from-lime-500/8 via-transparent to-transparent"></div>
+    <div class="relative max-w-7xl mx-auto">
+      <h1 class="text-4xl lg:text-5xl font-bold text-white mb-4" style="font-family: Montserrat, sans-serif;">Contact Us</h1>
+      <p class="text-gray-400 text-lg max-w-2xl">Whether you're ready to schedule a spring start-up, need help troubleshooting a sprinkler system, or want to design a new outdoor lighting plan — we're here for it.</p>
+    </div>
+  </section>
+
+  <section class="py-16 lg:py-24 px-4">
+    <div class="max-w-7xl mx-auto">
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-12">
+        <!-- Contact Form -->
+        <div>
+          <h2 class="text-2xl font-bold text-white mb-2" style="font-family: Montserrat, sans-serif;">Send Us a Message</h2>
+          <p class="text-gray-400 mb-6">Send us a quick message and we'll get back to you within 1 business day.</p>
+          <ContactForm client:load />
+        </div>
+
+        <!-- Contact Info -->
+        <div>
+          <h2 class="text-2xl font-bold text-white mb-6" style="font-family: Montserrat, sans-serif;">Reach Us Directly</h2>
+          <div class="space-y-6">
+            <div class="glass rounded-2xl p-6">
+              <h3 class="font-bold text-white mb-3">Phone</h3>
+              <a href="tel:2504687041" class="text-lime-400 text-xl font-semibold hover:text-lime-300 transition-colors">250-468-7041</a>
+              <p class="text-gray-500 text-sm mt-1">Monday–Friday, 8:00 AM – 4:00 PM</p>
+            </div>
+
+            <div class="glass rounded-2xl p-6">
+              <h3 class="font-bold text-white mb-3">Email</h3>
+              <a href="mailto:info@irrigators.ca" class="text-lime-400 text-lg font-semibold hover:text-lime-300 transition-colors">info@irrigators.ca</a>
+              <p class="text-gray-500 text-sm mt-1">We respond within 1 business day</p>
+            </div>
+
+            <div class="glass rounded-2xl p-6">
+              <h3 class="font-bold text-white mb-3">Location</h3>
+              <p class="text-gray-300">1766 Alberni Highway</p>
+              <p class="text-gray-300">Coombs, BC V0R 1M0</p>
+              <p class="text-gray-500 text-sm mt-2">Serving Ladysmith to Bowser and west to Port Alberni</p>
+            </div>
+
+            <div class="glass rounded-2xl p-6">
+              <h3 class="font-bold text-white mb-3">Service Areas</h3>
+              <div class="flex flex-wrap gap-2">
+                {["Nanaimo", "Parksville", "Qualicum Beach", "Coombs", "Lantzville", "Nanoose Bay", "Errington", "Bowser", "Cedar", "Ladysmith", "Port Alberni"].map((area) => (
+                  <span class="text-xs glass px-3 py-1 rounded-full text-gray-400">{area}</span>
+                ))}
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="py-12 px-4 border-t border-white/5">
+    <div class="max-w-4xl mx-auto text-center">
+      <p class="text-gray-500 text-sm uppercase tracking-wider mb-2">Proudly Serving Mid-Vancouver Island Since 1990</p>
+      <p class="text-gray-600 text-xs">The Irrigators is part of the Raincoast Group — an Indigenous-owned family of companies on Vancouver Island.</p>
+    </div>
+  </section>
+</BaseLayout>

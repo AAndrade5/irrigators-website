@@ -1,0 +1,380 @@
+---
+import '../styles/global.css';
+import { url } from '../utils/paths';
+
+interface Props {
+  title: string;
+  description: string;
+  canonical?: string;
+  schema?: object[];
+}
+
+const { title, description, canonical, schema = [] } = Astro.props;
+const currentPath = Astro.url.pathname;
+
+const navItems = [
+  { label: 'Home', href: url('/') },
+  { label: 'Services', href: url('/services/'), children: [
+    { label: 'Spring Start-Ups', href: url('/services/spring-startups/') },
+    { label: 'Winter Blowouts', href: url('/services/winter-blowouts/') },
+    { label: 'Repairs & Service Calls', href: url('/services/repairs/') },
+    { label: 'New Installations', href: url('/services/installations/') },
+    { label: 'Landscape Lighting', href: url('/services/landscape-lighting/') },
+    { label: 'Maintenance Plans', href: url('/services/maintenance-plans/') },
+  ]},
+  { label: 'Service Areas', href: url('/areas/'), children: [
+    { label: 'Nanaimo', href: url('/areas/nanaimo/') },
+    { label: 'Lantzville', href: url('/areas/lantzville/') },
+    { label: 'Nanoose Bay', href: url('/areas/nanoose-bay/') },
+    { label: 'Parksville', href: url('/areas/parksville/') },
+    { label: 'Qualicum Beach', href: url('/areas/qualicum-beach/') },
+    { label: 'Coombs', href: url('/areas/coombs/') },
+    { label: 'Errington', href: url('/areas/errington/') },
+    { label: 'Bowser', href: url('/areas/bowser/') },
+    { label: 'Port Alberni', href: url('/areas/port-alberni/') },
+    { label: 'Cedar', href: url('/areas/cedar/') },
+    { label: 'Ladysmith', href: url('/areas/ladysmith/') },
+  ]},
+  { label: 'Companies', href: url('/companies/'), children: [
+    { label: 'Raincoast Erosion Control', href: 'https://raincoastltd.ca', external: true },
+    { label: 'Elite Lawn Care', href: 'https://elitelawns.ca', external: true },
+    { label: 'The Irrigators', href: url('/') },
+    { label: 'BPL Hydroseed & Environmental', href: 'https://bplenviro.ca', external: true },
+    { label: 'TnT Hydroseeding', href: 'https://tnthydroseeding.ca', external: true },
+  ]},
+  { label: 'About', href: url('/about/') },
+  { label: 'Testimonials', href: url('/testimonials/') },
+  { label: 'Contact', href: url('/contact/') },
+];
+
+const localBusinessSchema = {
+  "@context": "https://schema.org",
+  "@type": ["LocalBusiness", "HomeAndConstructionBusiness"],
+  "@id": "https://irrigators.ca/#business",
+  "name": "The Irrigators",
+  "description": "Vancouver Island's trusted irrigation experts since 1990. Spring start-ups, winter blowouts, repairs, new installations, and landscape lighting. Serving Ladysmith to Bowser.",
+  "url": "https://irrigators.ca",
+  "telephone": "+1-250-468-7041",
+  "email": "info@irrigators.ca",
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "1766 Alberni Highway",
+    "addressLocality": "Coombs",
+    "addressRegion": "BC",
+    "postalCode": "V0R 1M0",
+    "addressCountry": "CA"
+  },
+  "geo": {
+    "@type": "GeoCoordinates",
+    "latitude": 49.3088,
+    "longitude": -124.3983
+  },
+  "areaServed": [
+    { "@type": "City", "name": "Nanaimo", "containedInPlace": { "@type": "AdministrativeArea", "name": "British Columbia" } },
+    { "@type": "City", "name": "Lantzville" },
+    { "@type": "City", "name": "Nanoose Bay" },
+    { "@type": "City", "name": "Parksville" },
+    { "@type": "City", "name": "Qualicum Beach" },
+    { "@type": "City", "name": "Errington" },
+    { "@type": "City", "name": "Coombs" },
+    { "@type": "City", "name": "Bowser" },
+    { "@type": "City", "name": "Port Alberni" },
+    { "@type": "City", "name": "Cedar" },
+    { "@type": "City", "name": "Ladysmith" },
+  ],
+  "foundingDate": "1990",
+  "openingHours": "Mo-Fr 08:00-16:00",
+  "priceRange": "$$",
+  "image": "https://irrigators.ca/images/irrigators-logo.png",
+  "sameAs": [],
+  "parentOrganization": {
+    "@type": "Organization",
+    "name": "Raincoast Group",
+    "url": "https://raincoastltd.ca"
+  },
+  "hasOfferCatalog": {
+    "@type": "OfferCatalog",
+    "name": "Irrigation & Lighting Services",
+    "itemListElement": [
+      { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Spring Irrigation Start-Ups" } },
+      { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Winter Irrigation Blowouts" } },
+      { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Irrigation Repairs & Service Calls" } },
+      { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "New Sprinkler System Installations" } },
+      { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Landscape Lighting Installation" } },
+      { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Annual Maintenance Plans" } },
+    ]
+  }
+};
+
+const autoCanonical = canonical || `https://irrigators.ca${currentPath}`;
+const allSchemas = [localBusinessSchema, ...schema];
+---
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content={description} />
+  <title>{title}</title>
+  <link rel="canonical" href={autoCanonical} />
+  <link rel="icon" type="image/svg+xml" href={url('/favicon.svg')} />
+  <link rel="icon" type="image/x-icon" href={url('/favicon.ico')} />
+  <meta name="theme-color" content="#9ACD32" />
+  <meta name="mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+  <meta property="og:title" content={title} />
+  <meta property="og:description" content={description} />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content={autoCanonical} />
+  <meta property="og:locale" content="en_CA" />
+  <meta property="og:site_name" content="The Irrigators" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content={title} />
+  <meta name="twitter:description" content={description} />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800;900&family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet" />
+  {allSchemas.map((s) => (
+    <script type="application/ld+json" set:html={JSON.stringify(s)} />
+  ))}
+</head>
+<body class="min-h-screen flex flex-col bg-dark-900 text-gray-200">
+  <!-- Header -->
+  <header class="bg-dark-950/90 backdrop-blur-xl border-b border-white/5 sticky top-0 z-50 shadow-lg shadow-black/20">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex items-center justify-between h-16 lg:h-20">
+        <!-- Logo -->
+        <a href={url('/')} class="flex items-center gap-3 shrink-0">
+          <div class="leading-tight">
+            <span class="text-lime-500 font-bold text-lg lg:text-xl tracking-tight" style="font-family: Montserrat, sans-serif;">The Irrigators</span>
+            <span class="hidden sm:block text-[10px] text-gray-500 -mt-0.5">A Raincoast Group Company</span>
+          </div>
+        </a>
+
+        <!-- Desktop Nav -->
+        <nav class="hidden lg:flex items-center gap-1">
+          {navItems.map((item) => (
+            <div class="relative group">
+              <a
+                href={item.href}
+                class:list={[
+                  'px-3 py-2 text-sm font-medium rounded-md transition-colors',
+                  currentPath === item.href ? 'text-lime-400 bg-lime-500/10' : 'text-gray-300 hover:text-lime-400 hover:bg-white/5'
+                ]}
+              >
+                {item.label}
+                {item.children && (
+                  <svg class="inline-block w-3 h-3 ml-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+                )}
+              </a>
+              {item.children && (
+                <div class="absolute left-0 top-full pt-1 hidden group-hover:block z-50">
+                  <div class="bg-dark-800/95 backdrop-blur-xl rounded-lg shadow-lg border border-white/10 py-2 min-w-[220px]">
+                    {item.children.map((child) => (
+                      <a
+                        href={child.href}
+                        {...(child.external ? { target: '_blank', rel: 'noopener noreferrer' } : {})}
+                        class:list={[
+                          'block px-4 py-2 text-sm transition-colors',
+                          currentPath === child.href ? 'text-lime-400 bg-lime-500/10 font-medium' : 'text-gray-300 hover:text-lime-400 hover:bg-white/5'
+                        ]}
+                      >
+                        {child.label}
+                        {child.external && <svg class="inline w-3 h-3 ml-1 opacity-50" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"/></svg>}
+                      </a>
+                    ))}
+                  </div>
+                </div>
+              )}
+            </div>
+          ))}
+        </nav>
+
+        <!-- Desktop CTA -->
+        <div class="hidden lg:flex items-center gap-3">
+          <a href="tel:2504687041" class="text-sm font-semibold text-lime-400 hover:text-lime-300 transition-colors">
+            <svg class="inline w-4 h-4 mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"/></svg>
+            250-468-7041
+          </a>
+          <a href={url('/contact/')} class="bg-lime-500/90 backdrop-blur text-dark-900 px-5 py-2.5 rounded-lg text-sm font-semibold hover:bg-lime-400 transition-colors shadow-lg shadow-lime-500/20 border border-lime-400/50">
+            Free Estimate
+          </a>
+        </div>
+
+        <!-- Mobile Menu Button -->
+        <button id="mobile-menu-btn" class="lg:hidden p-2 rounded-md text-gray-300 hover:bg-white/5" aria-label="Toggle menu">
+          <svg id="menu-icon-open" class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/></svg>
+          <svg id="menu-icon-close" class="w-6 h-6 hidden" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/></svg>
+        </button>
+      </div>
+    </div>
+
+    <!-- Mobile Menu -->
+    <div id="mobile-menu" class="lg:hidden hidden border-t border-white/5 bg-dark-900/95 backdrop-blur-xl">
+      <div class="px-4 py-4 space-y-1 max-h-[80vh] overflow-y-auto">
+        {navItems.map((item) => (
+          <div>
+            <a
+              href={item.href}
+              class:list={[
+                'block px-3 py-2 text-base font-medium rounded-md',
+                currentPath === item.href ? 'text-lime-400 bg-lime-500/10' : 'text-gray-300 hover:bg-white/5'
+              ]}
+            >
+              {item.label}
+            </a>
+            {item.children && (
+              <div class="ml-4 space-y-0.5">
+                {item.children.map((child) => (
+                  <a
+                    href={child.href}
+                    {...(child.external ? { target: '_blank', rel: 'noopener noreferrer' } : {})}
+                    class:list={[
+                      'block px-3 py-1.5 text-sm rounded-md',
+                      currentPath === child.href ? 'text-lime-400 bg-lime-500/10 font-medium' : 'text-gray-400 hover:bg-white/5'
+                    ]}
+                  >
+                    {child.label}
+                    {child.external && <svg class="inline w-3 h-3 ml-1 opacity-50" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"/></svg>}
+                  </a>
+                ))}
+              </div>
+            )}
+          </div>
+        ))}
+        <div class="pt-3 border-t border-white/10 space-y-2">
+          <a href="tel:2504687041" class="flex items-center gap-2 px-3 py-2 text-lime-400 font-semibold">
+            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"/></svg>
+            250-468-7041
+          </a>
+          <a href={url('/contact/')} class="block text-center bg-lime-500/90 backdrop-blur text-dark-900 px-5 py-3 rounded-lg font-semibold border border-lime-400/50 shadow-lg shadow-lime-500/20">
+            Get a Free Estimate
+          </a>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- Main Content -->
+  <main class="flex-1">
+    <slot />
+  </main>
+
+  <!-- Footer -->
+  <footer class="bg-dark-950 text-white border-t border-white/5">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 lg:py-16">
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+        <!-- Company -->
+        <div>
+          <div class="mb-4">
+            <span class="font-bold text-xl text-lime-400" style="font-family: Montserrat, sans-serif;">The Irrigators</span>
+            <span class="block text-[10px] text-gray-500 mt-0.5">A Raincoast Group Company</span>
+          </div>
+          <p class="text-gray-400 text-sm leading-relaxed mb-4">
+            Vancouver Island's trusted irrigation experts since 1990. Professional sprinkler systems, landscape lighting, and seasonal maintenance from Ladysmith to Bowser.
+          </p>
+          <div class="space-y-2 text-sm">
+            <a href="tel:2504687041" class="flex items-center gap-2 text-gray-400 hover:text-lime-400 transition-colors">
+              <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"/></svg>
+              250-468-7041
+            </a>
+            <a href="mailto:info@irrigators.ca" class="flex items-center gap-2 text-gray-400 hover:text-lime-400 transition-colors">
+              <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg>
+              info@irrigators.ca
+            </a>
+            <div class="flex items-center gap-2 text-gray-400">
+              <svg class="w-4 h-4 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/></svg>
+              1766 Alberni Hwy, Coombs, BC
+            </div>
+          </div>
+        </div>
+
+        <!-- Services -->
+        <div>
+          <h3 class="font-semibold text-lg mb-4" style="font-family: Montserrat, sans-serif;">Our Services</h3>
+          <ul class="space-y-2 text-sm text-gray-400">
+            <li><a href={url('/services/spring-startups/')} class="hover:text-lime-400 transition-colors">Spring Start-Ups</a></li>
+            <li><a href={url('/services/winter-blowouts/')} class="hover:text-lime-400 transition-colors">Winter Blowouts</a></li>
+            <li><a href={url('/services/repairs/')} class="hover:text-lime-400 transition-colors">Repairs & Service Calls</a></li>
+            <li><a href={url('/services/installations/')} class="hover:text-lime-400 transition-colors">New Installations</a></li>
+            <li><a href={url('/services/landscape-lighting/')} class="hover:text-lime-400 transition-colors">Landscape Lighting</a></li>
+            <li><a href={url('/services/maintenance-plans/')} class="hover:text-lime-400 transition-colors">Annual Maintenance Plans</a></li>
+          </ul>
+        </div>
+
+        <!-- Service Areas -->
+        <div>
+          <h3 class="font-semibold text-lg mb-4" style="font-family: Montserrat, sans-serif;">Service Areas</h3>
+          <ul class="space-y-2 text-sm text-gray-400">
+            <li><a href={url('/areas/nanaimo/')} class="hover:text-lime-400 transition-colors">Nanaimo</a></li>
+            <li><a href={url('/areas/lantzville/')} class="hover:text-lime-400 transition-colors">Lantzville</a></li>
+            <li><a href={url('/areas/nanoose-bay/')} class="hover:text-lime-400 transition-colors">Nanoose Bay</a></li>
+            <li><a href={url('/areas/parksville/')} class="hover:text-lime-400 transition-colors">Parksville</a></li>
+            <li><a href={url('/areas/qualicum-beach/')} class="hover:text-lime-400 transition-colors">Qualicum Beach</a></li>
+            <li><a href={url('/areas/coombs/')} class="hover:text-lime-400 transition-colors">Coombs</a></li>
+            <li><a href={url('/areas/port-alberni/')} class="hover:text-lime-400 transition-colors">Port Alberni</a></li>
+            <li><a href={url('/areas/ladysmith/')} class="hover:text-lime-400 transition-colors">Ladysmith</a></li>
+          </ul>
+        </div>
+
+        <!-- Quick Links & Raincoast Group -->
+        <div>
+          <h3 class="font-semibold text-lg mb-4" style="font-family: Montserrat, sans-serif;">Quick Links</h3>
+          <ul class="space-y-2 text-sm text-gray-400">
+            <li><a href={url('/about/')} class="hover:text-lime-400 transition-colors">About Us</a></li>
+            <li><a href={url('/testimonials/')} class="hover:text-lime-400 transition-colors">Testimonials</a></li>
+            <li><a href={url('/contact/')} class="hover:text-lime-400 transition-colors">Contact Us</a></li>
+          </ul>
+
+          <h3 class="font-semibold text-lg mt-6 mb-3" style="font-family: Montserrat, sans-serif;">The Raincoast Group</h3>
+          <p class="text-gray-500 text-xs mb-3">The Irrigators is part of the Raincoast Group — an Indigenous-owned family of companies on Vancouver Island.</p>
+          <ul class="space-y-2 text-sm text-gray-400">
+            <li><a href="https://raincoastltd.ca" target="_blank" rel="noopener noreferrer" class="hover:text-lime-400 transition-colors inline-flex items-center gap-1">Raincoast Erosion Control <svg class="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"/></svg></a></li>
+            <li><a href="https://elitelawns.ca" target="_blank" rel="noopener noreferrer" class="hover:text-lime-400 transition-colors inline-flex items-center gap-1">Elite Lawn Care <svg class="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"/></svg></a></li>
+            <li><a href="https://bplenviro.ca" target="_blank" rel="noopener noreferrer" class="hover:text-lime-400 transition-colors inline-flex items-center gap-1">BPL Hydroseed & Environmental <svg class="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"/></svg></a></li>
+            <li><a href="https://tnthydroseeding.ca" target="_blank" rel="noopener noreferrer" class="hover:text-lime-400 transition-colors inline-flex items-center gap-1">TnT Hydroseeding <svg class="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"/></svg></a></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="border-t border-white/5 mt-10 pt-8 flex flex-col sm:flex-row items-center justify-between gap-4 text-sm text-gray-500">
+        <p>&copy; {new Date().getFullYear()} The Irrigators &mdash; A Raincoast Group Company. All rights reserved.</p>
+        <p>Proudly serving mid-Vancouver Island since 1990</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Mobile Sticky CTA -->
+  <div class="lg:hidden fixed bottom-0 left-0 right-0 bg-dark-950/90 backdrop-blur-xl border-t border-white/5 px-4 py-3 flex items-center gap-3 z-50 shadow-[0_-2px_10px_rgba(0,0,0,0.3)]">
+    <a href="tel:2504687041" class="flex-1 flex items-center justify-center gap-2 bg-lime-500/90 backdrop-blur text-dark-900 py-2.5 rounded-lg font-semibold text-sm border border-lime-400/50 shadow-lg shadow-lime-500/20">
+      <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"/></svg>
+      Call Now
+    </a>
+    <a href={url('/contact/')} class="flex-1 flex items-center justify-center gap-2 bg-dark-700/90 backdrop-blur text-lime-400 py-2.5 rounded-lg font-semibold text-sm border border-lime-500/20 shadow-lg">
+      Free Estimate
+    </a>
+  </div>
+
+  <!-- Mobile menu toggle script -->
+  <script>
+    const btn = document.getElementById('mobile-menu-btn');
+    const menu = document.getElementById('mobile-menu');
+    const iconOpen = document.getElementById('menu-icon-open');
+    const iconClose = document.getElementById('menu-icon-close');
+
+    btn?.addEventListener('click', () => {
+      menu?.classList.toggle('hidden');
+      iconOpen?.classList.toggle('hidden');
+      iconClose?.classList.toggle('hidden');
+    });
+  </script>
+
+  <style>
+    @media (max-width: 1023px) {
+      main { padding-bottom: 4rem; }
+    }
+  </style>
+</body>
+</html>

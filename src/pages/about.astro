@@ -1,0 +1,97 @@
+---
+import { url } from '../utils/paths';
+import BaseLayout from '../layouts/BaseLayout.astro';
+import CTABanner from '../components/CTABanner.astro';
+
+const schema = [
+  {
+    "@context": "https://schema.org",
+    "@type": "AboutPage",
+    "name": "About The Irrigators",
+    "description": "Learn about The Irrigators — Vancouver Island's trusted irrigation experts since 1990. A Raincoast Group company."
+  }
+];
+---
+
+<BaseLayout
+  title="About The Irrigators | Vancouver Island Irrigation Experts Since 1990"
+  description="The Irrigators has been serving Vancouver Island since 1990. 35+ years of irrigation expertise, landscape lighting, and seasonal maintenance. Indigenous-owned, locally operated."
+  schema={schema}
+>
+  <section class="relative overflow-hidden py-16 lg:py-20 px-4">
+    <div class="absolute inset-0 bg-dark-950"></div>
+    <div class="absolute inset-0 bg-gradient-to-br from-lime-500/8 via-transparent to-transparent"></div>
+    <div class="relative max-w-7xl mx-auto">
+      <h1 class="text-4xl lg:text-5xl font-bold text-white mb-4" style="font-family: Montserrat, sans-serif;">About The Irrigators</h1>
+      <p class="text-gray-400 text-lg max-w-2xl">Vancouver Island's trusted irrigation experts since 1990. A Raincoast Group company — Indigenous-owned, locally operated.</p>
+    </div>
+  </section>
+
+  <section class="py-16 lg:py-24 px-4">
+    <div class="max-w-4xl mx-auto">
+      <h2 class="text-2xl font-bold text-white mb-4" style="font-family: Montserrat, sans-serif;">Our Story</h2>
+      <p class="text-gray-400 leading-relaxed mb-6">Since 1990, The Irrigators has been the name homeowners, property managers, and contractors trust for irrigation on Vancouver Island. What started as a small operation has grown into the mid-Island's go-to team for sprinkler systems, seasonal maintenance, and landscape lighting — all backed by over 35 years of hands-on experience.</p>
+
+      <p class="text-gray-400 leading-relaxed mb-6">Based at 1766 Alberni Highway in Coombs, we're centrally located to serve the entire mid-Island corridor — from Ladysmith in the south to Bowser in the north, and west to Port Alberni. Our technicians drive these roads daily, servicing residential homes, strata complexes, and commercial properties.</p>
+
+      <p class="text-gray-400 leading-relaxed mb-6">We're not a franchise. We're not a national chain. We're a local team that lives and works on Vancouver Island. We know the soil, the weather, the water conditions, and the specific challenges irrigation systems face in our climate. That local knowledge is what sets our work apart.</p>
+
+      <h2 class="text-2xl font-bold text-white mb-4 mt-10" style="font-family: Montserrat, sans-serif;">The Raincoast Group</h2>
+      <div class="glass-lime rounded-2xl p-8 mb-8">
+        <p class="text-gray-300 leading-relaxed mb-4">The Irrigators operates as part of the <strong class="text-white">Raincoast Group</strong>, an Indigenous-owned family of companies based on Vancouver Island. The Raincoast Group operates several businesses across different sectors, all rooted in quality workmanship and community service.</p>
+        <p class="text-gray-300 leading-relaxed mb-4">As an Indigenous-owned business, we bring a unique perspective to our work. Our connection to the land isn't just professional — it's cultural. We believe in responsible stewardship of the properties we service and the environment we all share.</p>
+        <p class="text-gray-300 leading-relaxed">When you hire The Irrigators, you're supporting an Indigenous-owned local business. Your investment stays in the community and supports the growth of an organization committed to creating opportunities on Vancouver Island.</p>
+      </div>
+
+      <h2 class="text-2xl font-bold text-white mb-4" style="font-family: Montserrat, sans-serif;">What Sets Us Apart</h2>
+      <div class="space-y-6 mb-10">
+        <div class="flex gap-4">
+          <div class="shrink-0 w-10 h-10 glass rounded-lg flex items-center justify-center">
+            <svg class="w-5 h-5 text-lime-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+          </div>
+          <div>
+            <h3 class="font-bold text-white mb-1">35+ Years of Experience</h3>
+            <p class="text-gray-400 text-sm">Since 1990, we've been installing, maintaining, and repairing irrigation systems across Vancouver Island. That experience means we've seen every problem and know the best solution.</p>
+          </div>
+        </div>
+        <div class="flex gap-4">
+          <div class="shrink-0 w-10 h-10 glass rounded-lg flex items-center justify-center">
+            <svg class="w-5 h-5 text-lime-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/></svg>
+          </div>
+          <div>
+            <h3 class="font-bold text-white mb-1">Local Knowledge</h3>
+            <p class="text-gray-400 text-sm">We know Vancouver Island's soil conditions, rainfall patterns, and water restrictions. Our systems are designed for our specific climate — not shipped from a mainland template.</p>
+          </div>
+        </div>
+        <div class="flex gap-4">
+          <div class="shrink-0 w-10 h-10 glass rounded-lg flex items-center justify-center">
+            <svg class="w-5 h-5 text-lime-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"/></svg>
+          </div>
+          <div>
+            <h3 class="font-bold text-white mb-1">Full-Service Operation</h3>
+            <p class="text-gray-400 text-sm">From design and installation to seasonal maintenance and emergency repairs — we handle everything. One team, one number, year-round support.</p>
+          </div>
+        </div>
+        <div class="flex gap-4">
+          <div class="shrink-0 w-10 h-10 glass rounded-lg flex items-center justify-center">
+            <svg class="w-5 h-5 text-lime-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"/></svg>
+          </div>
+          <div>
+            <h3 class="font-bold text-white mb-1">Responsive & Reliable</h3>
+            <p class="text-gray-400 text-sm">We respond to inquiries within one business day, show up when scheduled, and communicate proactively. No runarounds, no excuses.</p>
+          </div>
+        </div>
+      </div>
+
+      <h2 class="text-2xl font-bold text-white mb-4" style="font-family: Montserrat, sans-serif;">Our Service Area</h2>
+      <p class="text-gray-400 leading-relaxed mb-4">We serve the full central Vancouver Island corridor:</p>
+      <div class="flex flex-wrap gap-3 mb-10">
+        {["Ladysmith", "Cedar", "Nanaimo", "Lantzville", "Nanoose Bay", "Parksville", "Qualicum Beach", "Errington", "Coombs", "Bowser", "Port Alberni"].map((area) => (
+          <span class="glass text-lime-400 px-4 py-2 rounded-full text-sm font-medium">{area}</span>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <CTABanner />
+</BaseLayout>

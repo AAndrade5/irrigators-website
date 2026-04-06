@@ -1,0 +1,53 @@
+---
+import { url } from '../utils/paths';
+import BaseLayout from '../layouts/BaseLayout.astro';
+
+const companies = [
+  { name: "Raincoast Erosion Control", description: "The parent company. Erosion control, hydroseeding, and environmental services on Vancouver Island.", href: "https://raincoastltd.ca", external: true },
+  { name: "Elite Lawn Care", description: "Professional lawn care on Vancouver Island. 7-Step Lawn Care Program, aeration, fertilization, and more. Serving Nanaimo to Courtenay.", href: "https://elitelawns.ca", external: true },
+  { name: "The Irrigators", description: "Vancouver Island's trusted irrigation experts since 1990. Spring start-ups, winter blowouts, repairs, installations, and landscape lighting.", href: url('/'), external: false },
+  { name: "BPL Hydroseed & Environmental", description: "Interior BC's premier hydroseeding company. Residential and commercial hydroseeding, slope stabilization, environmental planning, and drone services.", href: "https://bplenviro.ca", external: true },
+  { name: "TnT Hydroseeding", description: "Landscaping, hydroseeding, and lawn maintenance services in Courtenay, BC.", href: "https://tnthydroseeding.ca", external: true },
+];
+---
+
+<BaseLayout
+  title="The Raincoast Group | Our Family of Companies"
+  description="The Irrigators is part of the Raincoast Group — an Indigenous-owned family of companies on Vancouver Island. Raincoast Erosion Control, Elite Lawn Care, BPL Hydroseed, TnT Hydroseeding."
+>
+  <section class="relative overflow-hidden py-16 lg:py-20 px-4">
+    <div class="absolute inset-0 bg-dark-950"></div>
+    <div class="absolute inset-0 bg-gradient-to-br from-lime-500/8 via-transparent to-transparent"></div>
+    <div class="relative max-w-7xl mx-auto">
+      <h1 class="text-4xl lg:text-5xl font-bold text-white mb-4" style="font-family: Montserrat, sans-serif;">The Raincoast Group</h1>
+      <p class="text-gray-400 text-lg max-w-2xl">An Indigenous-owned family of companies on Vancouver Island. The Irrigators is proud to be part of this group.</p>
+    </div>
+  </section>
+
+  <section class="py-16 lg:py-24 px-4">
+    <div class="max-w-4xl mx-auto">
+      <p class="text-gray-400 leading-relaxed mb-10">The Raincoast Group is an Indigenous-owned family of companies operating across British Columbia. Each company serves a specific sector, but we share the same values: quality workmanship, reliability, and deep roots in the communities we serve. When you work with any Raincoast company, you're supporting an Indigenous-owned local business.</p>
+
+      <div class="space-y-6">
+        {companies.map((company) => (
+          <a
+            href={company.href}
+            {...(company.external ? { target: '_blank', rel: 'noopener noreferrer' } : {})}
+            class="group block glass rounded-2xl p-8 hover:shadow-xl hover:shadow-lime-500/5 transition-all duration-300 hover:border-lime-500/20"
+          >
+            <div class="flex items-start justify-between gap-4">
+              <div>
+                <h2 class="text-xl font-bold text-white mb-2 group-hover:text-lime-400 transition-colors" style="font-family: Montserrat, sans-serif;">
+                  {company.name}
+                  {company.external && <svg class="inline w-4 h-4 ml-1 opacity-50" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"/></svg>}
+                </h2>
+                <p class="text-gray-400">{company.description}</p>
+              </div>
+              <svg class="w-5 h-5 text-lime-500 shrink-0 mt-1" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg>
+            </div>
+          </a>
+        ))}
+      </div>
+    </div>
+  </section>
+</BaseLayout>

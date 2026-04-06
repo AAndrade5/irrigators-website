@@ -1,0 +1,41 @@
+---
+import { url } from '../../utils/paths';
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import ServiceCard from '../../components/ServiceCard.astro';
+import CTABanner from '../../components/CTABanner.astro';
+
+const services = [
+  { title: "Spring Irrigation Start-Ups", description: "Full system check including valve testing, controller calibration, pressure checks, and zone optimization.", href: url('/services/spring-startups/'), cta: "Book My Start-Up" },
+  { title: "Winter Irrigation Blowouts", description: "Commercial-grade air compression to safely shut down your system before frost.", href: url('/services/winter-blowouts/'), cta: "Schedule Blowout" },
+  { title: "Service Calls & System Repairs", description: "Fast, reliable diagnosis and repair for broken heads, leaky valves, and electrical issues.", href: url('/services/repairs/'), cta: "Request Service" },
+  { title: "New Sprinkler System Installations", description: "Custom irrigation design and installation for homes, strata, and commercial properties.", href: url('/services/installations/'), cta: "Get a Quote" },
+  { title: "Landscape Lighting Installation", description: "Low-voltage, energy-efficient outdoor lighting design and installation.", href: url('/services/landscape-lighting/'), cta: "Design My Lighting" },
+  { title: "Annual Maintenance Plans", description: "Spring start-up, mid-season check, and fall winterization — all handled by our team.", href: url('/services/maintenance-plans/'), cta: "Learn More" },
+];
+---
+
+<BaseLayout
+  title="Irrigation & Lighting Services | The Irrigators — Vancouver Island"
+  description="Professional irrigation and landscape lighting services on Vancouver Island. Spring start-ups, winter blowouts, repairs, installations, lighting, and maintenance plans."
+>
+  <section class="relative overflow-hidden py-16 lg:py-20 px-4">
+    <div class="absolute inset-0 bg-dark-950"></div>
+    <div class="absolute inset-0 bg-gradient-to-br from-lime-500/8 via-transparent to-transparent"></div>
+    <div class="relative max-w-7xl mx-auto">
+      <h1 class="text-4xl lg:text-5xl font-bold text-white mb-4" style="font-family: Montserrat, sans-serif;">Our Services</h1>
+      <p class="text-gray-400 text-lg max-w-2xl">Professional irrigation and lighting services for homes, strata, and commercial spaces. Backed by 35+ years of local expertise on Vancouver Island.</p>
+    </div>
+  </section>
+
+  <section class="py-16 lg:py-24 px-4">
+    <div class="max-w-7xl mx-auto">
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        {services.map((service) => (
+          <ServiceCard {...service} />
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <CTABanner />
+</BaseLayout>

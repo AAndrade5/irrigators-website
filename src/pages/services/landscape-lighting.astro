@@ -1,0 +1,78 @@
+---
+import { url } from '../../utils/paths';
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import CTABanner from '../../components/CTABanner.astro';
+import FAQ from '../../components/FAQ.astro';
+
+const schema = [
+  {
+    "@context": "https://schema.org",
+    "@type": "Service",
+    "serviceType": "Landscape Lighting Installation",
+    "provider": { "@id": "https://irrigators.ca/#business" },
+    "areaServed": { "@type": "State", "name": "British Columbia" },
+    "description": "Professional landscape lighting design and installation on Vancouver Island."
+  }
+];
+
+const faqs = [
+  { question: "What type of lighting do you install?", answer: "We install low-voltage LED landscape lighting. It's energy-efficient, safe, long-lasting, and produces beautiful, warm light. We use professional-grade fixtures rated for our coastal climate." },
+  { question: "How much does landscape lighting cost?", answer: "Pricing depends on the scope — a simple pathway lighting package differs from a full-property design with accent, security, and deck lighting. Contact us for a free design consultation and quote." },
+  { question: "Will landscape lighting increase my electricity bill?", answer: "Minimally. Low-voltage LED systems are extremely energy-efficient. Most residential installations cost just a few dollars per month to operate, even running every evening." },
+  { question: "Can you add lighting to my existing irrigation system?", answer: "Yes. Landscape lighting and irrigation are complementary services, and we often install both. If you already have an irrigation system with us, adding lighting is straightforward." },
+];
+---
+
+<BaseLayout
+  title="Landscape Lighting Installation on Vancouver Island | The Irrigators"
+  description="Professional landscape lighting design and installation on Vancouver Island. Low-voltage LED systems for homes and businesses. Boost curb appeal, safety, and nighttime usability."
+  schema={schema}
+>
+  <section class="relative overflow-hidden py-16 lg:py-20 px-4">
+    <div class="absolute inset-0 bg-dark-950"></div>
+    <div class="absolute inset-0 bg-gradient-to-br from-lime-500/8 via-transparent to-transparent"></div>
+    <div class="relative max-w-7xl mx-auto">
+      <nav class="text-gray-500 text-sm mb-4">
+        <a href={url('/')} class="hover:text-lime-400">Home</a> / <a href={url('/services/')} class="hover:text-lime-400">Services</a> / Landscape Lighting
+      </nav>
+      <h1 class="text-4xl lg:text-5xl font-bold text-white mb-4" style="font-family: Montserrat, sans-serif;">Landscape Lighting Installation</h1>
+      <p class="text-gray-400 text-lg max-w-2xl">Enhance your outdoor space with professionally installed landscape lighting. Low-voltage, energy-efficient systems that boost curb appeal, safety, and nighttime usability.</p>
+    </div>
+  </section>
+
+  <section class="py-16 lg:py-24 px-4">
+    <div class="max-w-4xl mx-auto">
+      <h2 class="text-2xl font-bold text-white mb-4" style="font-family: Montserrat, sans-serif;">Bring Your Property to Life After Dark</h2>
+      <p class="text-gray-400 leading-relaxed mb-6">Great landscape lighting transforms a property. It highlights your home's best features, makes walkways safe, extends your outdoor living hours, and adds real curb appeal. We design and wire low-voltage, energy-efficient lighting systems that look beautiful and stand up to Vancouver Island's coastal weather.</p>
+
+      <p class="text-gray-400 leading-relaxed mb-6">Whether it's pathway lights guiding visitors to your front door, accent lights showcasing your garden, or deck and patio lighting for evening entertaining — we design a complete plan that fits your property and your style. Every installation uses professional-grade LED fixtures rated for years of reliable operation.</p>
+
+      <h2 class="text-2xl font-bold text-white mb-4 mt-10" style="font-family: Montserrat, sans-serif;">Lighting Solutions We Offer</h2>
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-10">
+        <div class="glass rounded-2xl p-5">
+          <h3 class="font-bold text-white mb-1">Pathway & Walkway Lighting</h3>
+          <p class="text-gray-400 text-sm">Safe, attractive lighting along paths, driveways, and entry points.</p>
+        </div>
+        <div class="glass rounded-2xl p-5">
+          <h3 class="font-bold text-white mb-1">Accent & Garden Lighting</h3>
+          <p class="text-gray-400 text-sm">Highlight trees, garden beds, and architectural features with targeted accent lights.</p>
+        </div>
+        <div class="glass rounded-2xl p-5">
+          <h3 class="font-bold text-white mb-1">Deck & Patio Lighting</h3>
+          <p class="text-gray-400 text-sm">Extend your outdoor living hours with warm, ambient lighting for entertaining areas.</p>
+        </div>
+        <div class="glass rounded-2xl p-5">
+          <h3 class="font-bold text-white mb-1">Security & Perimeter Lighting</h3>
+          <p class="text-gray-400 text-sm">Illuminate property boundaries and dark areas for safety and deterrence.</p>
+        </div>
+      </div>
+
+      <div class="mt-12">
+        <h2 class="text-2xl font-bold text-white mb-6" style="font-family: Montserrat, sans-serif;">Frequently Asked Questions</h2>
+        <FAQ items={faqs} />
+      </div>
+    </div>
+  </section>
+
+  <CTABanner title="Design My Lighting Plan" subtitle="We'll design a custom lighting layout for your property. Free consultation — let's light it up." />
+</BaseLayout>

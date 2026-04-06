@@ -1,0 +1,77 @@
+---
+import { url } from '../../utils/paths';
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import CTABanner from '../../components/CTABanner.astro';
+import FAQ from '../../components/FAQ.astro';
+
+const schema = [
+  {
+    "@context": "https://schema.org",
+    "@type": "Service",
+    "serviceType": "Annual Irrigation Maintenance Plan",
+    "provider": { "@id": "https://irrigators.ca/#business" },
+    "areaServed": { "@type": "State", "name": "British Columbia" },
+    "description": "Annual irrigation maintenance plans on Vancouver Island. Spring start-up, mid-season check, and fall winterization."
+  }
+];
+
+const faqs = [
+  { question: "What's included in an Annual Maintenance Plan?", answer: "Three scheduled visits: spring start-up (system activation, testing, and calibration), mid-season check (coverage verification, head adjustment, pressure check), and fall winterization (complete blowout and system shutdown)." },
+  { question: "How much does a maintenance plan save compared to booking individually?", answer: "Maintenance plan customers save compared to booking each service separately, plus you get priority scheduling. You'll never forget to book — we schedule everything for you." },
+  { question: "Can I add a maintenance plan for an existing system?", answer: "Absolutely. Maintenance plans are available for any irrigation system, whether we installed it or not. We'll assess your system during the first visit and let you know if anything needs attention." },
+  { question: "Do you maintain commercial and strata systems?", answer: "Yes. We provide maintenance plans for residential, strata, and commercial properties. Commercial plans can include more frequent mid-season visits if needed." },
+];
+---
+
+<BaseLayout
+  title="Annual Irrigation Maintenance Plans | The Irrigators — Vancouver Island"
+  description="Protect your irrigation investment year-round with an Annual Maintenance Plan. Spring start-up, mid-season check, and fall winterization — all scheduled and handled."
+  schema={schema}
+>
+  <section class="relative overflow-hidden py-16 lg:py-20 px-4">
+    <div class="absolute inset-0 bg-dark-950"></div>
+    <div class="absolute inset-0 bg-gradient-to-br from-lime-500/8 via-transparent to-transparent"></div>
+    <div class="relative max-w-7xl mx-auto">
+      <nav class="text-gray-500 text-sm mb-4">
+        <a href={url('/')} class="hover:text-lime-400">Home</a> / <a href={url('/services/')} class="hover:text-lime-400">Services</a> / Maintenance Plans
+      </nav>
+      <h1 class="text-4xl lg:text-5xl font-bold text-white mb-4" style="font-family: Montserrat, sans-serif;">Annual Maintenance Plans</h1>
+      <p class="text-gray-400 text-lg max-w-2xl">Year-round protection for your irrigation system. Spring start-up, mid-season check, and fall winterization — all scheduled and handled by our team.</p>
+    </div>
+  </section>
+
+  <section class="py-16 lg:py-24 px-4">
+    <div class="max-w-4xl mx-auto">
+      <h2 class="text-2xl font-bold text-white mb-4" style="font-family: Montserrat, sans-serif;">Set It and Forget It</h2>
+      <p class="text-gray-400 leading-relaxed mb-6">An Annual Maintenance Plan is the easiest way to keep your irrigation system running perfectly — season after season. We schedule everything, show up on time, and handle all the seasonal work your system needs. You never have to remember to book a start-up or blowout again.</p>
+
+      <p class="text-gray-400 leading-relaxed mb-6">Ideal for homeowners and property managers who want peace of mind without the hassle. Our maintenance plan customers also get priority scheduling during our busiest periods and savings compared to booking each service individually.</p>
+
+      <h2 class="text-2xl font-bold text-white mb-4 mt-10" style="font-family: Montserrat, sans-serif;">What's Included</h2>
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-10">
+        <div class="glass-lime rounded-2xl p-6 text-center">
+          <p class="text-lime-400 font-semibold text-sm uppercase tracking-wider mb-2">Spring</p>
+          <h3 class="font-bold text-white text-lg mb-2">System Start-Up</h3>
+          <p class="text-gray-400 text-sm">Full system activation, valve testing, controller calibration, pressure checks, head inspection.</p>
+        </div>
+        <div class="glass-lime rounded-2xl p-6 text-center">
+          <p class="text-lime-400 font-semibold text-sm uppercase tracking-wider mb-2">Summer</p>
+          <h3 class="font-bold text-white text-lg mb-2">Mid-Season Check</h3>
+          <p class="text-gray-400 text-sm">Coverage verification, head adjustments, nozzle cleaning, pressure check, controller review.</p>
+        </div>
+        <div class="glass-lime rounded-2xl p-6 text-center">
+          <p class="text-lime-400 font-semibold text-sm uppercase tracking-wider mb-2">Fall</p>
+          <h3 class="font-bold text-white text-lg mb-2">Winterization</h3>
+          <p class="text-gray-400 text-sm">Complete blowout with commercial compressor, controller shutdown, main valve closed.</p>
+        </div>
+      </div>
+
+      <div class="mt-12">
+        <h2 class="text-2xl font-bold text-white mb-6" style="font-family: Montserrat, sans-serif;">Frequently Asked Questions</h2>
+        <FAQ items={faqs} />
+      </div>
+    </div>
+  </section>
+
+  <CTABanner title="Sign Up for a Maintenance Plan" subtitle="Never worry about your irrigation system again. We'll handle the seasonal work — you enjoy the results." />
+</BaseLayout>

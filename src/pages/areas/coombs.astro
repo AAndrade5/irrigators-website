@@ -1,0 +1,83 @@
+---
+import { url } from '../../utils/paths';
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import CTABanner from '../../components/CTABanner.astro';
+import FAQ from '../../components/FAQ.astro';
+
+const schema = [
+  {
+    "@context": "https://schema.org",
+    "@type": "Service",
+    "serviceType": "Irrigation Services",
+    "provider": { "@id": "https://irrigators.ca/#business" },
+    "areaServed": { "@type": "City", "name": "Coombs", "containedInPlace": { "@type": "State", "name": "British Columbia" } },
+    "description": "Professional irrigation and landscape lighting services in Coombs, BC. Home base of The Irrigators."
+  }
+];
+
+const faqs = [
+  { question: "Is Coombs really your home base?", answer: "Yes. Our shop is at 1766 Alberni Highway in Coombs. We've been here since the beginning — it's central to our service area and gives us quick access to communities from Nanaimo to Port Alberni. If you're local, you've probably seen our trucks on the highway." },
+  { question: "Do Coombs properties have special irrigation needs?", answer: "Coombs is a mix of rural and semi-rural properties, many on larger lots. Well water is common, and soil conditions vary from clay to rocky. We design systems that match your specific property — whether it's a standard residential lawn or a larger rural property with gardens, pasture, and outbuildings." },
+  { question: "Can I drop off parts or pick up supplies at your Coombs shop?", answer: "We're primarily a service-based operation, but if you're a current client and need a quick part swap or have something to drop off, give us a call at 250-468-7041 and we'll arrange it. For new projects, we always start with an on-site visit." },
+  { question: "What's the fastest response time for Coombs-area repairs?", answer: "Since you're in our backyard, Coombs gets the fastest response times of any area we serve. For urgent issues like a mainline break or stuck valve flooding your yard, we can often respond same-day. Routine repairs are typically scheduled within a few days." },
+];
+---
+
+<BaseLayout
+  title="Irrigation Services in Coombs, BC | The Irrigators"
+  description="Professional irrigation and landscape lighting in Coombs, BC — our home base since 1990. Spring start-ups, winter blowouts, repairs, and new installations. Located at 1766 Alberni Hwy."
+  schema={schema}
+>
+  <section class="relative overflow-hidden py-16 lg:py-20 px-4">
+    <div class="absolute inset-0 bg-dark-950"></div>
+    <div class="absolute inset-0 bg-gradient-to-br from-lime-500/8 via-transparent to-transparent"></div>
+    <div class="relative max-w-7xl mx-auto">
+      <nav class="text-gray-500 text-sm mb-4">
+        <a href={url('/')} class="hover:text-lime-400">Home</a> / <a href={url('/areas/')} class="hover:text-lime-400">Service Areas</a> / Coombs
+      </nav>
+      <h1 class="text-4xl lg:text-5xl font-bold text-white mb-4" style="font-family: Montserrat, sans-serif;">Irrigation Services in Coombs, BC</h1>
+      <p class="text-gray-400 text-lg max-w-2xl">Coombs is home — this is where The Irrigators started and where our shop is today. We know this community better than anyone, and our Coombs neighbours get the fastest service on the Island.</p>
+    </div>
+  </section>
+
+  <section class="py-16 lg:py-24 px-4">
+    <div class="max-w-4xl mx-auto">
+      <h2 class="text-2xl font-bold text-white mb-4" style="font-family: Montserrat, sans-serif;">Our Home Base Since 1990</h2>
+      <p class="text-gray-400 leading-relaxed mb-6">Coombs is famous for the goats on the roof at the Old Country Market, but for us it's simply home. Our shop at 1766 Alberni Highway has been our base of operations since the early days, and its central location on Highway 4 gives us quick access to every community we serve — from Nanaimo to the east to Port Alberni to the west, and Qualicum Beach to the north.</p>
+      <p class="text-gray-400 leading-relaxed mb-6">The Coombs area is a mix of rural and semi-rural properties, many on larger lots with a combination of lawns, gardens, and natural areas. Well water is common in the area, and the soil ranges from clay to rocky depending on where you are. We've installed and maintained irrigation systems for our neighbours here for over 35 years — from small residential properties along the highway to larger rural acreages tucked back in the hills. Being local means we understand the conditions, the water sources, and the property types better than anyone.</p>
+
+      <h2 class="text-2xl font-bold text-white mb-4 mt-10" style="font-family: Montserrat, sans-serif;">Services Available in Coombs</h2>
+      <div class="grid grid-cols-1 sm:grid-cols-2 gap-3 mb-10">
+        <a href={url('/services/spring-startups/')} class="flex items-center gap-2 text-gray-400 hover:text-lime-400 transition-colors p-3 rounded-lg hover:bg-white/5">
+          <svg class="w-4 h-4 text-lime-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg>
+          Spring Irrigation Start-Ups
+        </a>
+        <a href={url('/services/winter-blowouts/')} class="flex items-center gap-2 text-gray-400 hover:text-lime-400 transition-colors p-3 rounded-lg hover:bg-white/5">
+          <svg class="w-4 h-4 text-lime-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg>
+          Winter Irrigation Blowouts
+        </a>
+        <a href={url('/services/repairs/')} class="flex items-center gap-2 text-gray-400 hover:text-lime-400 transition-colors p-3 rounded-lg hover:bg-white/5">
+          <svg class="w-4 h-4 text-lime-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg>
+          Repairs & Service Calls
+        </a>
+        <a href={url('/services/installations/')} class="flex items-center gap-2 text-gray-400 hover:text-lime-400 transition-colors p-3 rounded-lg hover:bg-white/5">
+          <svg class="w-4 h-4 text-lime-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg>
+          New Sprinkler Installations
+        </a>
+        <a href={url('/services/landscape-lighting/')} class="flex items-center gap-2 text-gray-400 hover:text-lime-400 transition-colors p-3 rounded-lg hover:bg-white/5">
+          <svg class="w-4 h-4 text-lime-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg>
+          Landscape Lighting
+        </a>
+        <a href={url('/services/maintenance-plans/')} class="flex items-center gap-2 text-gray-400 hover:text-lime-400 transition-colors p-3 rounded-lg hover:bg-white/5">
+          <svg class="w-4 h-4 text-lime-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg>
+          Annual Maintenance Plans
+        </a>
+      </div>
+
+      <h2 class="text-2xl font-bold text-white mb-6" style="font-family: Montserrat, sans-serif;">Frequently Asked Questions</h2>
+      <FAQ items={faqs} />
+    </div>
+  </section>
+
+  <CTABanner title="Get a Free Estimate for Your Coombs Property" subtitle="You're in our backyard — fastest response times and zero travel hassle. Call us at 250-468-7041 or request your free estimate online." />
+</BaseLayout>

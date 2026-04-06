@@ -1,0 +1,97 @@
+---
+import { url } from '../../utils/paths';
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import CTABanner from '../../components/CTABanner.astro';
+import FAQ from '../../components/FAQ.astro';
+
+const schema = [
+  {
+    "@context": "https://schema.org",
+    "@type": "Service",
+    "serviceType": "Spring Irrigation Start-Up",
+    "provider": { "@id": "https://irrigators.ca/#business" },
+    "areaServed": { "@type": "State", "name": "British Columbia" },
+    "description": "Professional spring irrigation system start-up and testing on Vancouver Island."
+  }
+];
+
+const faqs = [
+  { question: "When should I book my spring start-up?", answer: "We recommend booking in March or early April. Starting early ensures your system is tested and ready before the growing season. Booking early also guarantees your spot — spring is our busiest season." },
+  { question: "What does a spring start-up include?", answer: "A full system check: we test every valve, calibrate your controller, check water pressure, optimize zone timing, inspect all heads for damage from winter, and make sure everything runs cleanly before we leave." },
+  { question: "How long does a spring start-up take?", answer: "Most residential start-ups take 30–60 minutes depending on the size and complexity of your system. Larger commercial or strata systems may take longer." },
+  { question: "Do I need to be home for the start-up?", answer: "Not necessarily. As long as we can access the system and controller, we can perform the start-up. We'll leave a detailed report of what we found and any repairs needed." },
+];
+---
+
+<BaseLayout
+  title="Spring Irrigation Start-Ups on Vancouver Island | The Irrigators"
+  description="Professional spring irrigation start-up services on Vancouver Island. Valve testing, controller calibration, pressure checks, and zone optimization. Book your start-up today."
+  schema={schema}
+>
+  <section class="relative overflow-hidden py-16 lg:py-20 px-4">
+    <div class="absolute inset-0 bg-dark-950"></div>
+    <div class="absolute inset-0 bg-gradient-to-br from-lime-500/8 via-transparent to-transparent"></div>
+    <div class="relative max-w-7xl mx-auto">
+      <nav class="text-gray-500 text-sm mb-4">
+        <a href={url('/')} class="hover:text-lime-400">Home</a> / <a href={url('/services/')} class="hover:text-lime-400">Services</a> / Spring Start-Ups
+      </nav>
+      <h1 class="text-4xl lg:text-5xl font-bold text-white mb-4" style="font-family: Montserrat, sans-serif;">Spring Irrigation Start-Ups</h1>
+      <p class="text-gray-400 text-lg max-w-2xl">Kick off the season right. Professional system activation, testing, and optimization to ensure your irrigation is ready for summer.</p>
+    </div>
+  </section>
+
+  <section class="py-16 lg:py-24 px-4">
+    <div class="max-w-4xl mx-auto">
+      <h2 class="text-2xl font-bold text-white mb-4" style="font-family: Montserrat, sans-serif;">Get Your System Ready for the Season</h2>
+      <p class="text-gray-400 leading-relaxed mb-6">After months of sitting idle through Vancouver Island's wet, cool winter, your irrigation system needs a professional hand before it's ready to perform. A spring start-up isn't just about turning the water back on — it's a comprehensive system check that catches problems before they become expensive repairs.</p>
+
+      <p class="text-gray-400 leading-relaxed mb-6">Our technicians have been doing this for over 35 years. We know what to look for — from frost-damaged valve diaphragms to controllers that lost their programming over winter. We test every zone, every head, and every connection so you can trust your system is ready to keep your lawn healthy all season.</p>
+
+      <h2 class="text-2xl font-bold text-white mb-4 mt-10" style="font-family: Montserrat, sans-serif;">What's Included</h2>
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-10">
+        <div class="glass rounded-2xl p-5">
+          <h3 class="font-bold text-white mb-1">Valve Testing</h3>
+          <p class="text-gray-400 text-sm">Every zone valve is tested for proper operation, leaks, and diaphragm condition.</p>
+        </div>
+        <div class="glass rounded-2xl p-5">
+          <h3 class="font-bold text-white mb-1">Controller Calibration</h3>
+          <p class="text-gray-400 text-sm">Your timer is reprogrammed for spring watering schedules, adjusted for your property's needs.</p>
+        </div>
+        <div class="glass rounded-2xl p-5">
+          <h3 class="font-bold text-white mb-1">Pressure Checks</h3>
+          <p class="text-gray-400 text-sm">Water pressure is checked to ensure even coverage and prevent head damage from excess pressure.</p>
+        </div>
+        <div class="glass rounded-2xl p-5">
+          <h3 class="font-bold text-white mb-1">Zone Optimization</h3>
+          <p class="text-gray-400 text-sm">Run times and head patterns are adjusted for efficient watering and full coverage.</p>
+        </div>
+        <div class="glass rounded-2xl p-5">
+          <h3 class="font-bold text-white mb-1">Head Inspection</h3>
+          <p class="text-gray-400 text-sm">Every sprinkler head is visually inspected and tested. Damaged or misaligned heads are flagged.</p>
+        </div>
+        <div class="glass rounded-2xl p-5">
+          <h3 class="font-bold text-white mb-1">System Report</h3>
+          <p class="text-gray-400 text-sm">You'll receive a summary of findings, any recommended repairs, and your system's overall condition.</p>
+        </div>
+      </div>
+
+      <div class="mt-12">
+        <h2 class="text-2xl font-bold text-white mb-6" style="font-family: Montserrat, sans-serif;">Frequently Asked Questions</h2>
+        <FAQ items={faqs} />
+      </div>
+    </div>
+  </section>
+
+  <section class="py-12 px-4">
+    <div class="max-w-4xl mx-auto text-center">
+      <h2 class="text-xl font-bold text-white mb-4" style="font-family: Montserrat, sans-serif;">Spring Start-Ups Available In:</h2>
+      <div class="flex flex-wrap justify-center gap-3">
+        {["Nanaimo", "Parksville", "Qualicum Beach", "Coombs", "Lantzville", "Nanoose Bay", "Errington", "Bowser", "Cedar", "Ladysmith", "Port Alberni"].map((area) => (
+          <span class="text-sm glass px-4 py-2 rounded-full text-gray-300">{area}</span>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <CTABanner title="Ready to Book Your Spring Start-Up?" subtitle="Limited availability — book early to secure your spot. We'll have your system tested and running before the growing season." />
+</BaseLayout>

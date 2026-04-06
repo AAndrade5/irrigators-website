@@ -1,0 +1,83 @@
+---
+import { url } from '../../utils/paths';
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import CTABanner from '../../components/CTABanner.astro';
+import FAQ from '../../components/FAQ.astro';
+
+const schema = [
+  {
+    "@context": "https://schema.org",
+    "@type": "Service",
+    "serviceType": "Irrigation Services",
+    "provider": { "@id": "https://irrigators.ca/#business" },
+    "areaServed": { "@type": "City", "name": "Parksville", "containedInPlace": { "@type": "State", "name": "British Columbia" } },
+    "description": "Professional irrigation and landscape lighting services in Parksville, BC."
+  }
+];
+
+const faqs = [
+  { question: "When should Parksville homeowners schedule a spring start-up?", answer: "We recommend booking in March or early April. Parksville's mild coastal climate means lawns start growing early, and you want your system tested and ready before the dry season kicks in. Spring is our busiest time, so booking early secures your spot." },
+  { question: "Do you service strata and townhouse complexes in Parksville?", answer: "Yes. Parksville has a number of strata developments, retirement communities, and townhouse complexes with shared irrigation systems. We service many of them — from seasonal start-ups and blowouts to full system overhauls and ongoing maintenance plans." },
+  { question: "What irrigation is best for Parksville's sandy soil?", answer: "Parts of Parksville — especially closer to the beach — have sandier soil that drains quickly. This means water moves through the root zone fast, so we program shorter, more frequent watering cycles. Drip irrigation is especially effective for garden beds in sandy soil areas, keeping water right where plants need it." },
+  { question: "Can you install irrigation for a new Parksville home?", answer: "Absolutely. We work with homeowners, builders, and landscapers on new construction in Parksville. We can install a complete irrigation system from scratch — including design, trenching, pipe and head installation, controller setup, and final programming. We handle landscape lighting at the same time if you want it." },
+];
+---
+
+<BaseLayout
+  title="Irrigation Services in Parksville, BC | The Irrigators"
+  description="Professional irrigation and landscape lighting in Parksville, BC. Spring start-ups, winter blowouts, repairs, and new installations. Serving Parksville since 1990."
+  schema={schema}
+>
+  <section class="relative overflow-hidden py-16 lg:py-20 px-4">
+    <div class="absolute inset-0 bg-dark-950"></div>
+    <div class="absolute inset-0 bg-gradient-to-br from-lime-500/8 via-transparent to-transparent"></div>
+    <div class="relative max-w-7xl mx-auto">
+      <nav class="text-gray-500 text-sm mb-4">
+        <a href={url('/')} class="hover:text-lime-400">Home</a> / <a href={url('/areas/')} class="hover:text-lime-400">Service Areas</a> / Parksville
+      </nav>
+      <h1 class="text-4xl lg:text-5xl font-bold text-white mb-4" style="font-family: Montserrat, sans-serif;">Irrigation Services in Parksville, BC</h1>
+      <p class="text-gray-400 text-lg max-w-2xl">Parksville's famous beaches and warm summers make reliable irrigation essential. From family homes to retirement communities, we keep Parksville properties green and healthy all season.</p>
+    </div>
+  </section>
+
+  <section class="py-16 lg:py-24 px-4">
+    <div class="max-w-4xl mx-auto">
+      <h2 class="text-2xl font-bold text-white mb-4" style="font-family: Montserrat, sans-serif;">Trusted Irrigation Service in Parksville</h2>
+      <p class="text-gray-400 leading-relaxed mb-6">Parksville is one of Vancouver Island's most popular communities, known for its stunning oceanside parks, warm summer temperatures, and welcoming mix of retirement properties and young families. The town's proximity to the beach means sandy soil is common in some areas, while properties further from the coast tend toward heavier loam. Both conditions require thoughtful irrigation design to keep landscapes thriving through the dry months.</p>
+      <p class="text-gray-400 leading-relaxed mb-6">Just minutes from our base in Coombs, Parksville is one of our core service areas. We maintain irrigation systems for individual homeowners, strata complexes, and commercial properties throughout the community. Whether you have a well-established garden that needs a system upgrade, a new build that needs irrigation from the ground up, or an existing system that needs its annual spring start-up or winter blowout, we've got you covered.</p>
+
+      <h2 class="text-2xl font-bold text-white mb-4 mt-10" style="font-family: Montserrat, sans-serif;">Services Available in Parksville</h2>
+      <div class="grid grid-cols-1 sm:grid-cols-2 gap-3 mb-10">
+        <a href={url('/services/spring-startups/')} class="flex items-center gap-2 text-gray-400 hover:text-lime-400 transition-colors p-3 rounded-lg hover:bg-white/5">
+          <svg class="w-4 h-4 text-lime-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg>
+          Spring Irrigation Start-Ups
+        </a>
+        <a href={url('/services/winter-blowouts/')} class="flex items-center gap-2 text-gray-400 hover:text-lime-400 transition-colors p-3 rounded-lg hover:bg-white/5">
+          <svg class="w-4 h-4 text-lime-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg>
+          Winter Irrigation Blowouts
+        </a>
+        <a href={url('/services/repairs/')} class="flex items-center gap-2 text-gray-400 hover:text-lime-400 transition-colors p-3 rounded-lg hover:bg-white/5">
+          <svg class="w-4 h-4 text-lime-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg>
+          Repairs & Service Calls
+        </a>
+        <a href={url('/services/installations/')} class="flex items-center gap-2 text-gray-400 hover:text-lime-400 transition-colors p-3 rounded-lg hover:bg-white/5">
+          <svg class="w-4 h-4 text-lime-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg>
+          New Sprinkler Installations
+        </a>
+        <a href={url('/services/landscape-lighting/')} class="flex items-center gap-2 text-gray-400 hover:text-lime-400 transition-colors p-3 rounded-lg hover:bg-white/5">
+          <svg class="w-4 h-4 text-lime-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg>
+          Landscape Lighting
+        </a>
+        <a href={url('/services/maintenance-plans/')} class="flex items-center gap-2 text-gray-400 hover:text-lime-400 transition-colors p-3 rounded-lg hover:bg-white/5">
+          <svg class="w-4 h-4 text-lime-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg>
+          Annual Maintenance Plans
+        </a>
+      </div>
+
+      <h2 class="text-2xl font-bold text-white mb-6" style="font-family: Montserrat, sans-serif;">Frequently Asked Questions</h2>
+      <FAQ items={faqs} />
+    </div>
+  </section>
+
+  <CTABanner title="Get a Free Estimate for Your Parksville Property" subtitle="Just minutes from our Coombs base, Parksville is one of our core service areas. Call today or request your free estimate online." />
+</BaseLayout>

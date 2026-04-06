@@ -1,0 +1,83 @@
+---
+import { url } from '../../utils/paths';
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import CTABanner from '../../components/CTABanner.astro';
+import FAQ from '../../components/FAQ.astro';
+
+const schema = [
+  {
+    "@context": "https://schema.org",
+    "@type": "Service",
+    "serviceType": "Irrigation Services",
+    "provider": { "@id": "https://irrigators.ca/#business" },
+    "areaServed": { "@type": "City", "name": "Bowser", "containedInPlace": { "@type": "State", "name": "British Columbia" } },
+    "description": "Professional irrigation and landscape lighting services in Bowser, BC."
+  }
+];
+
+const faqs = [
+  { question: "Do you travel to Bowser for service calls?", answer: "Yes. Bowser is within our regular service area, about 20 minutes north of Qualicum Beach. We schedule Bowser visits alongside our work in the Qualicum and Parksville areas to keep things efficient. For seasonal services like spring start-ups and winter blowouts, we batch Bowser appointments on dedicated days." },
+  { question: "Many Bowser properties are vacation homes — can you service them when owners aren't around?", answer: "Absolutely. We service many vacation and seasonal properties in the Bowser area. As long as we can access the irrigation system and controller, we don't need you on site. We'll leave a detailed report and contact you with any findings. Many clients put us on an annual maintenance plan so they don't have to think about it." },
+  { question: "Is there a travel charge for Bowser service?", answer: "Our pricing is competitive for the entire service area. Bowser is a regular part of our route, so there's no excessive travel premium. We'll provide a clear quote before any work begins." },
+  { question: "What types of irrigation systems work best in Bowser?", answer: "Bowser properties range from compact residential to larger rural and waterfront lots. We match the system to the property — rotary heads for large lawns, spray heads for smaller areas, drip for gardens and beds. Coastal properties may need wind-adjusted placement. We design for your specific conditions." },
+];
+---
+
+<BaseLayout
+  title="Irrigation Services in Bowser, BC | The Irrigators"
+  description="Professional irrigation and landscape lighting in Bowser, BC. Spring start-ups, winter blowouts, repairs, and new installations. Serving Bowser since 1990."
+  schema={schema}
+>
+  <section class="relative overflow-hidden py-16 lg:py-20 px-4">
+    <div class="absolute inset-0 bg-dark-950"></div>
+    <div class="absolute inset-0 bg-gradient-to-br from-lime-500/8 via-transparent to-transparent"></div>
+    <div class="relative max-w-7xl mx-auto">
+      <nav class="text-gray-500 text-sm mb-4">
+        <a href={url('/')} class="hover:text-lime-400">Home</a> / <a href={url('/areas/')} class="hover:text-lime-400">Service Areas</a> / Bowser
+      </nav>
+      <h1 class="text-4xl lg:text-5xl font-bold text-white mb-4" style="font-family: Montserrat, sans-serif;">Irrigation Services in Bowser, BC</h1>
+      <p class="text-gray-400 text-lg max-w-2xl">From year-round residents to vacation property owners, Bowser's coastal community trusts The Irrigators for reliable irrigation service. Professional care for every property type.</p>
+    </div>
+  </section>
+
+  <section class="py-16 lg:py-24 px-4">
+    <div class="max-w-4xl mx-auto">
+      <h2 class="text-2xl font-bold text-white mb-4" style="font-family: Montserrat, sans-serif;">Reliable Irrigation for Bowser's Coastal Properties</h2>
+      <p class="text-gray-400 leading-relaxed mb-6">Bowser is a quiet coastal community north of Qualicum Beach where many properties double as vacation retreats or seasonal getaways. The area's mix of year-round residents and part-time homeowners creates a unique demand for irrigation service — systems need to be dependable even when owners aren't on site to catch problems. That's where a trusted local company with 35+ years of experience makes all the difference.</p>
+      <p class="text-gray-400 leading-relaxed mb-6">We've been servicing Bowser properties since 1990, handling everything from annual spring start-ups and fall blowouts to emergency repairs and brand-new installations. The coastal conditions here — wind exposure, sandy soil near the waterfront, and variable water pressure — are all factors we account for in every system we design and maintain. Whether you live in Bowser full-time or visit seasonally, we'll keep your irrigation system running right.</p>
+
+      <h2 class="text-2xl font-bold text-white mb-4 mt-10" style="font-family: Montserrat, sans-serif;">Services Available in Bowser</h2>
+      <div class="grid grid-cols-1 sm:grid-cols-2 gap-3 mb-10">
+        <a href={url('/services/spring-startups/')} class="flex items-center gap-2 text-gray-400 hover:text-lime-400 transition-colors p-3 rounded-lg hover:bg-white/5">
+          <svg class="w-4 h-4 text-lime-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg>
+          Spring Irrigation Start-Ups
+        </a>
+        <a href={url('/services/winter-blowouts/')} class="flex items-center gap-2 text-gray-400 hover:text-lime-400 transition-colors p-3 rounded-lg hover:bg-white/5">
+          <svg class="w-4 h-4 text-lime-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg>
+          Winter Irrigation Blowouts
+        </a>
+        <a href={url('/services/repairs/')} class="flex items-center gap-2 text-gray-400 hover:text-lime-400 transition-colors p-3 rounded-lg hover:bg-white/5">
+          <svg class="w-4 h-4 text-lime-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg>
+          Repairs & Service Calls
+        </a>
+        <a href={url('/services/installations/')} class="flex items-center gap-2 text-gray-400 hover:text-lime-400 transition-colors p-3 rounded-lg hover:bg-white/5">
+          <svg class="w-4 h-4 text-lime-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg>
+          New Sprinkler Installations
+        </a>
+        <a href={url('/services/landscape-lighting/')} class="flex items-center gap-2 text-gray-400 hover:text-lime-400 transition-colors p-3 rounded-lg hover:bg-white/5">
+          <svg class="w-4 h-4 text-lime-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg>
+          Landscape Lighting
+        </a>
+        <a href={url('/services/maintenance-plans/')} class="flex items-center gap-2 text-gray-400 hover:text-lime-400 transition-colors p-3 rounded-lg hover:bg-white/5">
+          <svg class="w-4 h-4 text-lime-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg>
+          Annual Maintenance Plans
+        </a>
+      </div>
+
+      <h2 class="text-2xl font-bold text-white mb-6" style="font-family: Montserrat, sans-serif;">Frequently Asked Questions</h2>
+      <FAQ items={faqs} />
+    </div>
+  </section>
+
+  <CTABanner title="Get a Free Estimate for Your Bowser Property" subtitle="Year-round home or seasonal retreat — we keep Bowser properties irrigated and worry-free. Contact us for a free estimate." />
+</BaseLayout>

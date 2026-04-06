@@ -1,0 +1,83 @@
+---
+import { url } from '../../utils/paths';
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import CTABanner from '../../components/CTABanner.astro';
+import FAQ from '../../components/FAQ.astro';
+
+const schema = [
+  {
+    "@context": "https://schema.org",
+    "@type": "Service",
+    "serviceType": "Irrigation Services",
+    "provider": { "@id": "https://irrigators.ca/#business" },
+    "areaServed": { "@type": "City", "name": "Nanoose Bay", "containedInPlace": { "@type": "State", "name": "British Columbia" } },
+    "description": "Professional irrigation and landscape lighting services in Nanoose Bay, BC."
+  }
+];
+
+const faqs = [
+  { question: "Do you work on waterfront properties in Nanoose Bay?", answer: "Yes, waterfront properties are common in Nanoose Bay and we service many of them. Coastal properties have specific challenges — salt air exposure, wind, and sandy or rocky soil near the water. We select corrosion-resistant components and design zones that account for wind patterns and soil drainage." },
+  { question: "What about irrigation for Nanoose Bay properties on well water?", answer: "Some Nanoose Bay properties rely on well water. We work with whatever water source you have — we'll test flow rate and pressure to design a system that operates efficiently within your well's capacity. We can also set up scheduling to avoid overtaxing the well during peak draw times." },
+  { question: "Is Nanoose Bay in your regular service route?", answer: "Nanoose Bay sits right between Nanaimo and our home base in Coombs, so we drive through it constantly. It's one of our most convenient service areas — we're often in the neighbourhood already and can combine visits efficiently." },
+  { question: "Can you add drip irrigation for my Nanoose Bay garden beds?", answer: "Absolutely. Many Nanoose Bay properties have extensive garden beds and ornamental plantings. Drip irrigation is the most efficient way to water these areas — it delivers water directly to roots, reduces waste, and keeps foliage dry to prevent disease. We integrate drip zones into your overall system." },
+];
+---
+
+<BaseLayout
+  title="Irrigation Services in Nanoose Bay, BC | The Irrigators"
+  description="Professional irrigation and landscape lighting in Nanoose Bay, BC. Spring start-ups, winter blowouts, repairs, and new installations. Serving Nanoose Bay since 1990."
+  schema={schema}
+>
+  <section class="relative overflow-hidden py-16 lg:py-20 px-4">
+    <div class="absolute inset-0 bg-dark-950"></div>
+    <div class="absolute inset-0 bg-gradient-to-br from-lime-500/8 via-transparent to-transparent"></div>
+    <div class="relative max-w-7xl mx-auto">
+      <nav class="text-gray-500 text-sm mb-4">
+        <a href={url('/')} class="hover:text-lime-400">Home</a> / <a href={url('/areas/')} class="hover:text-lime-400">Service Areas</a> / Nanoose Bay
+      </nav>
+      <h1 class="text-4xl lg:text-5xl font-bold text-white mb-4" style="font-family: Montserrat, sans-serif;">Irrigation Services in Nanoose Bay, BC</h1>
+      <p class="text-gray-400 text-lg max-w-2xl">Nanoose Bay's waterfront and rural properties deserve irrigation designed for coastal conditions. Professional installation, maintenance, and repairs from a team that knows the area inside out.</p>
+    </div>
+  </section>
+
+  <section class="py-16 lg:py-24 px-4">
+    <div class="max-w-4xl mx-auto">
+      <h2 class="text-2xl font-bold text-white mb-4" style="font-family: Montserrat, sans-serif;">Coastal Irrigation for Nanoose Bay Properties</h2>
+      <p class="text-gray-400 leading-relaxed mb-6">Nanoose Bay is a picturesque waterfront community nestled between Nanaimo and Parksville, home to a mix of oceanfront estates, rural acreages, and well-kept residential properties. The area's coastal exposure, varied soil conditions — from sandy near the water to clay further inland — and the prevalence of larger lots all factor into how we design and service irrigation systems here.</p>
+      <p class="text-gray-400 leading-relaxed mb-6">Many Nanoose Bay homeowners take pride in their gardens and landscapes, and a properly designed irrigation system is essential to keeping everything thriving through the dry summer months. We've been maintaining systems in this community for over three decades and understand the local conditions. From waterfront properties that need wind-resistant sprinkler placement to rural lots with well water supply, we tailor every system to the property.</p>
+
+      <h2 class="text-2xl font-bold text-white mb-4 mt-10" style="font-family: Montserrat, sans-serif;">Services Available in Nanoose Bay</h2>
+      <div class="grid grid-cols-1 sm:grid-cols-2 gap-3 mb-10">
+        <a href={url('/services/spring-startups/')} class="flex items-center gap-2 text-gray-400 hover:text-lime-400 transition-colors p-3 rounded-lg hover:bg-white/5">
+          <svg class="w-4 h-4 text-lime-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg>
+          Spring Irrigation Start-Ups
+        </a>
+        <a href={url('/services/winter-blowouts/')} class="flex items-center gap-2 text-gray-400 hover:text-lime-400 transition-colors p-3 rounded-lg hover:bg-white/5">
+          <svg class="w-4 h-4 text-lime-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg>
+          Winter Irrigation Blowouts
+        </a>
+        <a href={url('/services/repairs/')} class="flex items-center gap-2 text-gray-400 hover:text-lime-400 transition-colors p-3 rounded-lg hover:bg-white/5">
+          <svg class="w-4 h-4 text-lime-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg>
+          Repairs & Service Calls
+        </a>
+        <a href={url('/services/installations/')} class="flex items-center gap-2 text-gray-400 hover:text-lime-400 transition-colors p-3 rounded-lg hover:bg-white/5">
+          <svg class="w-4 h-4 text-lime-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg>
+          New Sprinkler Installations
+        </a>
+        <a href={url('/services/landscape-lighting/')} class="flex items-center gap-2 text-gray-400 hover:text-lime-400 transition-colors p-3 rounded-lg hover:bg-white/5">
+          <svg class="w-4 h-4 text-lime-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg>
+          Landscape Lighting
+        </a>
+        <a href={url('/services/maintenance-plans/')} class="flex items-center gap-2 text-gray-400 hover:text-lime-400 transition-colors p-3 rounded-lg hover:bg-white/5">
+          <svg class="w-4 h-4 text-lime-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg>
+          Annual Maintenance Plans
+        </a>
+      </div>
+
+      <h2 class="text-2xl font-bold text-white mb-6" style="font-family: Montserrat, sans-serif;">Frequently Asked Questions</h2>
+      <FAQ items={faqs} />
+    </div>
+  </section>
+
+  <CTABanner title="Get a Free Estimate for Your Nanoose Bay Property" subtitle="Waterfront estate or rural acreage — we design irrigation systems that work for your property and your water source. Reach out for a free estimate." />
+</BaseLayout>
