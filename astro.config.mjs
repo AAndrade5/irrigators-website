@@ -5,7 +5,8 @@ import sitemap from '@astrojs/sitemap';
 import tailwindcss from '@tailwindcss/vite';
 
 export default defineConfig({
-  site: 'https://irrigators.ca',
+  site: 'https://aandrade5.github.io',
+  base: '/irrigators-website',
   integrations: [
     react(),
     sitemap(),
