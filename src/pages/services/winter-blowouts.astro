@@ -29,11 +29,11 @@ const faqs = [
   schema={schema}
 >
   <section class="relative overflow-hidden py-16 lg:py-20 px-4">
-    <div class="absolute inset-0 bg-dark-950"></div>
-    <div class="absolute inset-0 bg-gradient-to-br from-lime-500/8 via-transparent to-transparent"></div>
+    <div class="absolute inset-0 bg-cover bg-center bg-brand-900" style={`background-image: url('${import.meta.env.BASE_URL}images/heroes/hero-irrigation.jpg');`}></div>
+    <div class="absolute inset-0 bg-brand-900/75 backdrop-blur-[2px]"></div>
     <div class="relative max-w-7xl mx-auto">
       <nav class="text-gray-500 text-sm mb-4">
-        <a href={url('/')} class="hover:text-lime-400">Home</a> / <a href={url('/services/')} class="hover:text-lime-400">Services</a> / Winter Blowouts
+        <a href={url('/')} class="hover:text-brand-200">Home</a> / <a href={url('/services/')} class="hover:text-brand-200">Services</a> / Winter Blowouts
       </nav>
       <h1 class="text-4xl lg:text-5xl font-bold text-white mb-4" style="font-family: Montserrat, sans-serif;">Winter Irrigation Blowouts</h1>
       <p class="text-gray-400 text-lg max-w-2xl">Protect your investment. Professional winterization using commercial-grade air compression to prevent frost damage to your irrigation system.</p>
@@ -42,38 +42,38 @@ const faqs = [
 
   <section class="py-16 lg:py-24 px-4">
     <div class="max-w-4xl mx-auto">
-      <h2 class="text-2xl font-bold text-white mb-4" style="font-family: Montserrat, sans-serif;">Don't Let Frost Destroy Your System</h2>
-      <p class="text-gray-400 leading-relaxed mb-6">Vancouver Island may have mild winters compared to the rest of Canada, but our overnight temperatures regularly dip below freezing — and that's all it takes. Water left in your irrigation lines expands when it freezes, cracking pipes, damaging valve internals, and splitting fittings. The repairs can cost hundreds or thousands of dollars.</p>
+      <h2 class="text-2xl font-bold text-gray-900 mb-4" style="font-family: Montserrat, sans-serif;">Don't Let Frost Destroy Your System</h2>
+      <p class="text-gray-600 leading-relaxed mb-6">Vancouver Island may have mild winters compared to the rest of Canada, but our overnight temperatures regularly dip below freezing — and that's all it takes. Water left in your irrigation lines expands when it freezes, cracking pipes, damaging valve internals, and splitting fittings. The repairs can cost hundreds or thousands of dollars.</p>
 
-      <p class="text-gray-400 leading-relaxed mb-6">A professional winter blowout is the simplest, most effective way to prevent all of this. We use high-power commercial-grade air compressors to push every drop of water out of your system — from the mainline and lateral pipes to individual heads and backflow preventers. When the frost comes, there's nothing left to freeze.</p>
+      <p class="text-gray-600 leading-relaxed mb-6">A professional winter blowout is the simplest, most effective way to prevent all of this. We use high-power commercial-grade air compressors to push every drop of water out of your system — from the mainline and lateral pipes to individual heads and backflow preventers. When the frost comes, there's nothing left to freeze.</p>
 
-      <h2 class="text-2xl font-bold text-white mb-4 mt-10" style="font-family: Montserrat, sans-serif;">How It Works</h2>
+      <h2 class="text-2xl font-bold text-gray-900 mb-4 mt-10" style="font-family: Montserrat, sans-serif;">How It Works</h2>
       <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-10">
         <div class="glass rounded-2xl p-6 text-center">
           <div class="w-12 h-12 bg-lime-500/20 rounded-full flex items-center justify-center mx-auto mb-3 border border-lime-500/30">
-            <span class="text-lime-400 font-bold">1</span>
+            <span class="text-brand-900 font-bold">1</span>
           </div>
-          <h3 class="font-bold text-white mb-2">Connect</h3>
-          <p class="text-gray-400 text-sm">We connect our commercial air compressor to your system's blowout port or backflow preventer.</p>
+          <h3 class="font-bold text-gray-900 mb-2">Connect</h3>
+          <p class="text-gray-600 text-sm">We connect our commercial air compressor to your system's blowout port or backflow preventer.</p>
         </div>
         <div class="glass rounded-2xl p-6 text-center">
           <div class="w-12 h-12 bg-lime-500/20 rounded-full flex items-center justify-center mx-auto mb-3 border border-lime-500/30">
-            <span class="text-lime-400 font-bold">2</span>
+            <span class="text-brand-900 font-bold">2</span>
           </div>
-          <h3 class="font-bold text-white mb-2">Purge</h3>
-          <p class="text-gray-400 text-sm">Each zone is individually blown out until no water remains — lines, valves, and heads are all cleared.</p>
+          <h3 class="font-bold text-gray-900 mb-2">Purge</h3>
+          <p class="text-gray-600 text-sm">Each zone is individually blown out until no water remains — lines, valves, and heads are all cleared.</p>
         </div>
         <div class="glass rounded-2xl p-6 text-center">
           <div class="w-12 h-12 bg-lime-500/20 rounded-full flex items-center justify-center mx-auto mb-3 border border-lime-500/30">
-            <span class="text-lime-400 font-bold">3</span>
+            <span class="text-brand-900 font-bold">3</span>
           </div>
-          <h3 class="font-bold text-white mb-2">Shut Down</h3>
-          <p class="text-gray-400 text-sm">Your controller is set to off, the main valve is closed, and your system is safely winterized until spring.</p>
+          <h3 class="font-bold text-gray-900 mb-2">Shut Down</h3>
+          <p class="text-gray-600 text-sm">Your controller is set to off, the main valve is closed, and your system is safely winterized until spring.</p>
         </div>
       </div>
 
       <div class="mt-12">
-        <h2 class="text-2xl font-bold text-white mb-6" style="font-family: Montserrat, sans-serif;">Frequently Asked Questions</h2>
+        <h2 class="text-2xl font-bold text-gray-900 mb-6" style="font-family: Montserrat, sans-serif;">Frequently Asked Questions</h2>
         <FAQ items={faqs} />
       </div>
     </div>

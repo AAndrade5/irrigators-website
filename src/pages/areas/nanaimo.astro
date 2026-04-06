@@ -29,11 +29,11 @@ const faqs = [
   schema={schema}
 >
   <section class="relative overflow-hidden py-16 lg:py-20 px-4">
-    <div class="absolute inset-0 bg-dark-950"></div>
-    <div class="absolute inset-0 bg-gradient-to-br from-lime-500/8 via-transparent to-transparent"></div>
+    <div class="absolute inset-0 bg-cover bg-center bg-brand-900" style={`background-image: url('${import.meta.env.BASE_URL}images/heroes/hero-irrigation.jpg');`}></div>
+    <div class="absolute inset-0 bg-brand-900/75 backdrop-blur-[2px]"></div>
     <div class="relative max-w-7xl mx-auto">
       <nav class="text-gray-500 text-sm mb-4">
-        <a href={url('/')} class="hover:text-lime-400">Home</a> / <a href={url('/areas/')} class="hover:text-lime-400">Service Areas</a> / Nanaimo
+        <a href={url('/')} class="hover:text-brand-200">Home</a> / <a href={url('/areas/')} class="hover:text-brand-200">Service Areas</a> / Nanaimo
       </nav>
       <h1 class="text-4xl lg:text-5xl font-bold text-white mb-4" style="font-family: Montserrat, sans-serif;">Irrigation Services in Nanaimo, BC</h1>
       <p class="text-gray-400 text-lg max-w-2xl">Vancouver Island's Hub City deserves reliable irrigation. From older neighbourhoods with heavy clay soil to brand-new subdivisions, we keep Nanaimo's lawns and gardens healthy all season long.</p>
@@ -42,46 +42,46 @@ const faqs = [
 
   <section class="py-16 lg:py-24 px-4">
     <div class="max-w-4xl mx-auto">
-      <h2 class="text-2xl font-bold text-white mb-4" style="font-family: Montserrat, sans-serif;">Irrigation Experts Who Know Nanaimo</h2>
-      <p class="text-gray-400 leading-relaxed mb-6">Nanaimo is Vancouver Island's second-largest city and one of our busiest service areas. The city's mix of established neighbourhoods and new developments means we see every kind of irrigation challenge — from aging systems in Harewood that need modernizing to brand-new installations in north-end subdivisions. The heavy clay soil that's common across Nanaimo requires careful zone programming to prevent runoff and ensure water actually reaches the root zone.</p>
-      <p class="text-gray-400 leading-relaxed mb-6">We've been servicing Nanaimo properties since 1990 and our crews are in the city every week. Whether you need a spring start-up for your home near Departure Bay, a winter blowout for your commercial property on the Island Highway, or landscape lighting to showcase your Hammond Bay waterfront, we bring 35+ years of Vancouver Island experience to every job.</p>
+      <h2 class="text-2xl font-bold text-gray-900 mb-4" style="font-family: Montserrat, sans-serif;">Irrigation Experts Who Know Nanaimo</h2>
+      <p class="text-gray-600 leading-relaxed mb-6">Nanaimo is Vancouver Island's second-largest city and one of our busiest service areas. The city's mix of established neighbourhoods and new developments means we see every kind of irrigation challenge — from aging systems in Harewood that need modernizing to brand-new installations in north-end subdivisions. The heavy clay soil that's common across Nanaimo requires careful zone programming to prevent runoff and ensure water actually reaches the root zone.</p>
+      <p class="text-gray-600 leading-relaxed mb-6">We've been servicing Nanaimo properties since 1990 and our crews are in the city every week. Whether you need a spring start-up for your home near Departure Bay, a winter blowout for your commercial property on the Island Highway, or landscape lighting to showcase your Hammond Bay waterfront, we bring 35+ years of Vancouver Island experience to every job.</p>
 
-      <h2 class="text-2xl font-bold text-white mb-4 mt-10" style="font-family: Montserrat, sans-serif;">Services Available in Nanaimo</h2>
+      <h2 class="text-2xl font-bold text-gray-900 mb-4 mt-10" style="font-family: Montserrat, sans-serif;">Services Available in Nanaimo</h2>
       <div class="grid grid-cols-1 sm:grid-cols-2 gap-3 mb-10">
-        <a href={url('/services/spring-startups/')} class="flex items-center gap-2 text-gray-400 hover:text-lime-400 transition-colors p-3 rounded-lg hover:bg-white/5">
-          <svg class="w-4 h-4 text-lime-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg>
+        <a href={url('/services/spring-startups/')} class="flex items-center gap-2 text-gray-600 hover:text-brand-900 transition-colors p-3 rounded-lg hover:bg-brand-50">
+          <svg class="w-4 h-4 text-brand-700" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg>
           Spring Irrigation Start-Ups
         </a>
-        <a href={url('/services/winter-blowouts/')} class="flex items-center gap-2 text-gray-400 hover:text-lime-400 transition-colors p-3 rounded-lg hover:bg-white/5">
-          <svg class="w-4 h-4 text-lime-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg>
+        <a href={url('/services/winter-blowouts/')} class="flex items-center gap-2 text-gray-600 hover:text-brand-900 transition-colors p-3 rounded-lg hover:bg-brand-50">
+          <svg class="w-4 h-4 text-brand-700" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg>
           Winter Irrigation Blowouts
         </a>
-        <a href={url('/services/repairs/')} class="flex items-center gap-2 text-gray-400 hover:text-lime-400 transition-colors p-3 rounded-lg hover:bg-white/5">
-          <svg class="w-4 h-4 text-lime-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg>
+        <a href={url('/services/repairs/')} class="flex items-center gap-2 text-gray-600 hover:text-brand-900 transition-colors p-3 rounded-lg hover:bg-brand-50">
+          <svg class="w-4 h-4 text-brand-700" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg>
           Repairs & Service Calls
         </a>
-        <a href={url('/services/installations/')} class="flex items-center gap-2 text-gray-400 hover:text-lime-400 transition-colors p-3 rounded-lg hover:bg-white/5">
-          <svg class="w-4 h-4 text-lime-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg>
+        <a href={url('/services/installations/')} class="flex items-center gap-2 text-gray-600 hover:text-brand-900 transition-colors p-3 rounded-lg hover:bg-brand-50">
+          <svg class="w-4 h-4 text-brand-700" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg>
           New Sprinkler Installations
         </a>
-        <a href={url('/services/landscape-lighting/')} class="flex items-center gap-2 text-gray-400 hover:text-lime-400 transition-colors p-3 rounded-lg hover:bg-white/5">
-          <svg class="w-4 h-4 text-lime-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg>
+        <a href={url('/services/landscape-lighting/')} class="flex items-center gap-2 text-gray-600 hover:text-brand-900 transition-colors p-3 rounded-lg hover:bg-brand-50">
+          <svg class="w-4 h-4 text-brand-700" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg>
           Landscape Lighting
         </a>
-        <a href={url('/services/maintenance-plans/')} class="flex items-center gap-2 text-gray-400 hover:text-lime-400 transition-colors p-3 rounded-lg hover:bg-white/5">
-          <svg class="w-4 h-4 text-lime-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg>
+        <a href={url('/services/maintenance-plans/')} class="flex items-center gap-2 text-gray-600 hover:text-brand-900 transition-colors p-3 rounded-lg hover:bg-brand-50">
+          <svg class="w-4 h-4 text-brand-700" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg>
           Annual Maintenance Plans
         </a>
       </div>
 
-      <h2 class="text-2xl font-bold text-white mb-4 mt-10" style="font-family: Montserrat, sans-serif;">Nanaimo Neighbourhoods We Service</h2>
+      <h2 class="text-2xl font-bold text-gray-900 mb-4 mt-10" style="font-family: Montserrat, sans-serif;">Nanaimo Neighbourhoods We Service</h2>
       <div class="flex flex-wrap gap-3 mb-10">
         {["North Nanaimo", "South Nanaimo", "Departure Bay", "Hammond Bay", "Harewood", "Chase River", "Westwood Lake", "Long Lake", "Diver Lake"].map((hood) => (
-          <span class="text-sm glass px-4 py-2 rounded-full text-gray-300">{hood}</span>
+          <span class="text-sm glass px-4 py-2 rounded-full text-gray-700">{hood}</span>
         ))}
       </div>
 
-      <h2 class="text-2xl font-bold text-white mb-6" style="font-family: Montserrat, sans-serif;">Frequently Asked Questions</h2>
+      <h2 class="text-2xl font-bold text-gray-900 mb-6" style="font-family: Montserrat, sans-serif;">Frequently Asked Questions</h2>
       <FAQ items={faqs} />
     </div>
   </section>

@@ -1,30 +1,16 @@
 @import "tailwindcss";
 
 @theme {
+  --color-lime-600: #7CB518;
   --color-lime-500: #9ACD32;
   --color-lime-400: #B5E550;
   --color-lime-300: #C8EE6E;
   --color-lime-200: #DFFFA0;
   --color-lime-100: #F0FFD0;
   --color-lime-50: #F8FFE8;
-  --color-dark-950: #0a0a0a;
-  --color-dark-900: #111111;
-  --color-dark-800: #161616;
-  --color-dark-700: #1c1c1c;
-  --color-dark-600: #252525;
-  --color-dark-500: #333333;
-  --color-dark-400: #444444;
-  --color-dark-300: #666666;
-  --color-dark-200: #888888;
-  --color-dark-100: #aaaaaa;
-}
-
-@font-face {
-  font-family: 'Montserrat';
-  font-style: normal;
-  font-weight: 100 900;
-  font-display: swap;
-  src: url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800;900&display=swap');
+  --color-brand-900: #2d4a0f;
+  --color-brand-800: #3a6113;
+  --color-brand-700: #4a7a1a;
 }
 
 html {
@@ -39,44 +25,28 @@ h1, h2, h3, h4, h5, h6 {
   font-family: 'Montserrat', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
 }
 
-/* Glass card effects — dark theme */
+/* Glass card effects — light theme */
 .glass {
-  background: rgba(255, 255, 255, 0.05);
+  background: rgba(255, 255, 255, 0.7);
   backdrop-filter: blur(20px);
   -webkit-backdrop-filter: blur(20px);
-  border: 1px solid rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.3);
 }
 .glass-dark {
-  background: rgba(0, 0, 0, 0.4);
+  background: rgba(0, 0, 0, 0.3);
   backdrop-filter: blur(20px);
   -webkit-backdrop-filter: blur(20px);
-  border: 1px solid rgba(255, 255, 255, 0.06);
+  border: 1px solid rgba(255, 255, 255, 0.15);
 }
 .glass-lime {
-  background: rgba(154, 205, 50, 0.15);
+  background: rgba(45, 74, 15, 0.85);
   backdrop-filter: blur(20px);
   -webkit-backdrop-filter: blur(20px);
-  border: 1px solid rgba(154, 205, 50, 0.25);
+  border: 1px solid rgba(255, 255, 255, 0.15);
 }
 .glass-light {
-  background: rgba(255, 255, 255, 0.08);
+  background: rgba(255, 255, 255, 0.5);
   backdrop-filter: blur(16px);
   -webkit-backdrop-filter: blur(16px);
-  border: 1px solid rgba(255, 255, 255, 0.1);
-}
-
-/* Hero photo background with fallback */
-.hero-photo {
-  background-size: cover;
-  background-position: center;
-  background-color: #111111;
-  position: relative;
-}
-.hero-photo::before {
-  content: '';
-  position: absolute;
-  inset: 0;
-  background: rgba(10, 10, 10, 0.7);
-  backdrop-filter: blur(2px);
-  -webkit-backdrop-filter: blur(2px);
+  border: 1px solid rgba(255, 255, 255, 0.25);
 }

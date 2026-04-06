@@ -29,11 +29,11 @@ const faqs = [
   schema={schema}
 >
   <section class="relative overflow-hidden py-16 lg:py-20 px-4">
-    <div class="absolute inset-0 bg-dark-950"></div>
-    <div class="absolute inset-0 bg-gradient-to-br from-lime-500/8 via-transparent to-transparent"></div>
+    <div class="absolute inset-0 bg-cover bg-center bg-brand-900" style={`background-image: url('${import.meta.env.BASE_URL}images/heroes/hero-irrigation.jpg');`}></div>
+    <div class="absolute inset-0 bg-brand-900/75 backdrop-blur-[2px]"></div>
     <div class="relative max-w-7xl mx-auto">
       <nav class="text-gray-500 text-sm mb-4">
-        <a href={url('/')} class="hover:text-lime-400">Home</a> / <a href={url('/areas/')} class="hover:text-lime-400">Service Areas</a> / Coombs
+        <a href={url('/')} class="hover:text-brand-200">Home</a> / <a href={url('/areas/')} class="hover:text-brand-200">Service Areas</a> / Coombs
       </nav>
       <h1 class="text-4xl lg:text-5xl font-bold text-white mb-4" style="font-family: Montserrat, sans-serif;">Irrigation Services in Coombs, BC</h1>
       <p class="text-gray-400 text-lg max-w-2xl">Coombs is home — this is where The Irrigators started and where our shop is today. We know this community better than anyone, and our Coombs neighbours get the fastest service on the Island.</p>
@@ -42,39 +42,39 @@ const faqs = [
 
   <section class="py-16 lg:py-24 px-4">
     <div class="max-w-4xl mx-auto">
-      <h2 class="text-2xl font-bold text-white mb-4" style="font-family: Montserrat, sans-serif;">Our Home Base Since 1990</h2>
-      <p class="text-gray-400 leading-relaxed mb-6">Coombs is famous for the goats on the roof at the Old Country Market, but for us it's simply home. Our shop at 1766 Alberni Highway has been our base of operations since the early days, and its central location on Highway 4 gives us quick access to every community we serve — from Nanaimo to the east to Port Alberni to the west, and Qualicum Beach to the north.</p>
-      <p class="text-gray-400 leading-relaxed mb-6">The Coombs area is a mix of rural and semi-rural properties, many on larger lots with a combination of lawns, gardens, and natural areas. Well water is common in the area, and the soil ranges from clay to rocky depending on where you are. We've installed and maintained irrigation systems for our neighbours here for over 35 years — from small residential properties along the highway to larger rural acreages tucked back in the hills. Being local means we understand the conditions, the water sources, and the property types better than anyone.</p>
+      <h2 class="text-2xl font-bold text-gray-900 mb-4" style="font-family: Montserrat, sans-serif;">Our Home Base Since 1990</h2>
+      <p class="text-gray-600 leading-relaxed mb-6">Coombs is famous for the goats on the roof at the Old Country Market, but for us it's simply home. Our shop at 1766 Alberni Highway has been our base of operations since the early days, and its central location on Highway 4 gives us quick access to every community we serve — from Nanaimo to the east to Port Alberni to the west, and Qualicum Beach to the north.</p>
+      <p class="text-gray-600 leading-relaxed mb-6">The Coombs area is a mix of rural and semi-rural properties, many on larger lots with a combination of lawns, gardens, and natural areas. Well water is common in the area, and the soil ranges from clay to rocky depending on where you are. We've installed and maintained irrigation systems for our neighbours here for over 35 years — from small residential properties along the highway to larger rural acreages tucked back in the hills. Being local means we understand the conditions, the water sources, and the property types better than anyone.</p>
 
-      <h2 class="text-2xl font-bold text-white mb-4 mt-10" style="font-family: Montserrat, sans-serif;">Services Available in Coombs</h2>
+      <h2 class="text-2xl font-bold text-gray-900 mb-4 mt-10" style="font-family: Montserrat, sans-serif;">Services Available in Coombs</h2>
       <div class="grid grid-cols-1 sm:grid-cols-2 gap-3 mb-10">
-        <a href={url('/services/spring-startups/')} class="flex items-center gap-2 text-gray-400 hover:text-lime-400 transition-colors p-3 rounded-lg hover:bg-white/5">
-          <svg class="w-4 h-4 text-lime-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg>
+        <a href={url('/services/spring-startups/')} class="flex items-center gap-2 text-gray-600 hover:text-brand-900 transition-colors p-3 rounded-lg hover:bg-brand-50">
+          <svg class="w-4 h-4 text-brand-700" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg>
           Spring Irrigation Start-Ups
         </a>
-        <a href={url('/services/winter-blowouts/')} class="flex items-center gap-2 text-gray-400 hover:text-lime-400 transition-colors p-3 rounded-lg hover:bg-white/5">
-          <svg class="w-4 h-4 text-lime-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg>
+        <a href={url('/services/winter-blowouts/')} class="flex items-center gap-2 text-gray-600 hover:text-brand-900 transition-colors p-3 rounded-lg hover:bg-brand-50">
+          <svg class="w-4 h-4 text-brand-700" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg>
           Winter Irrigation Blowouts
         </a>
-        <a href={url('/services/repairs/')} class="flex items-center gap-2 text-gray-400 hover:text-lime-400 transition-colors p-3 rounded-lg hover:bg-white/5">
-          <svg class="w-4 h-4 text-lime-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg>
+        <a href={url('/services/repairs/')} class="flex items-center gap-2 text-gray-600 hover:text-brand-900 transition-colors p-3 rounded-lg hover:bg-brand-50">
+          <svg class="w-4 h-4 text-brand-700" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg>
           Repairs & Service Calls
         </a>
-        <a href={url('/services/installations/')} class="flex items-center gap-2 text-gray-400 hover:text-lime-400 transition-colors p-3 rounded-lg hover:bg-white/5">
-          <svg class="w-4 h-4 text-lime-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg>
+        <a href={url('/services/installations/')} class="flex items-center gap-2 text-gray-600 hover:text-brand-900 transition-colors p-3 rounded-lg hover:bg-brand-50">
+          <svg class="w-4 h-4 text-brand-700" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg>
           New Sprinkler Installations
         </a>
-        <a href={url('/services/landscape-lighting/')} class="flex items-center gap-2 text-gray-400 hover:text-lime-400 transition-colors p-3 rounded-lg hover:bg-white/5">
-          <svg class="w-4 h-4 text-lime-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg>
+        <a href={url('/services/landscape-lighting/')} class="flex items-center gap-2 text-gray-600 hover:text-brand-900 transition-colors p-3 rounded-lg hover:bg-brand-50">
+          <svg class="w-4 h-4 text-brand-700" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg>
           Landscape Lighting
         </a>
-        <a href={url('/services/maintenance-plans/')} class="flex items-center gap-2 text-gray-400 hover:text-lime-400 transition-colors p-3 rounded-lg hover:bg-white/5">
-          <svg class="w-4 h-4 text-lime-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg>
+        <a href={url('/services/maintenance-plans/')} class="flex items-center gap-2 text-gray-600 hover:text-brand-900 transition-colors p-3 rounded-lg hover:bg-brand-50">
+          <svg class="w-4 h-4 text-brand-700" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg>
           Annual Maintenance Plans
         </a>
       </div>
 
-      <h2 class="text-2xl font-bold text-white mb-6" style="font-family: Montserrat, sans-serif;">Frequently Asked Questions</h2>
+      <h2 class="text-2xl font-bold text-gray-900 mb-6" style="font-family: Montserrat, sans-serif;">Frequently Asked Questions</h2>
       <FAQ items={faqs} />
     </div>
   </section>

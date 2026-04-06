@@ -29,11 +29,11 @@ const faqs = [
   schema={schema}
 >
   <section class="relative overflow-hidden py-16 lg:py-20 px-4">
-    <div class="absolute inset-0 bg-dark-950"></div>
-    <div class="absolute inset-0 bg-gradient-to-br from-lime-500/8 via-transparent to-transparent"></div>
+    <div class="absolute inset-0 bg-cover bg-center bg-brand-900" style={`background-image: url('${import.meta.env.BASE_URL}images/heroes/hero-irrigation.jpg');`}></div>
+    <div class="absolute inset-0 bg-brand-900/75 backdrop-blur-[2px]"></div>
     <div class="relative max-w-7xl mx-auto">
       <nav class="text-gray-500 text-sm mb-4">
-        <a href={url('/')} class="hover:text-lime-400">Home</a> / <a href={url('/areas/')} class="hover:text-lime-400">Service Areas</a> / Qualicum Beach
+        <a href={url('/')} class="hover:text-brand-200">Home</a> / <a href={url('/areas/')} class="hover:text-brand-200">Service Areas</a> / Qualicum Beach
       </nav>
       <h1 class="text-4xl lg:text-5xl font-bold text-white mb-4" style="font-family: Montserrat, sans-serif;">Irrigation Services in Qualicum Beach, BC</h1>
       <p class="text-gray-400 text-lg max-w-2xl">Qualicum Beach is famous for its gardens and well-maintained properties. We provide the irrigation expertise to keep them that way — professional service from a team just up the road.</p>
@@ -42,39 +42,39 @@ const faqs = [
 
   <section class="py-16 lg:py-24 px-4">
     <div class="max-w-4xl mx-auto">
-      <h2 class="text-2xl font-bold text-white mb-4" style="font-family: Montserrat, sans-serif;">Keeping Qualicum Beach Gardens Thriving</h2>
-      <p class="text-gray-400 leading-relaxed mb-6">Qualicum Beach has earned its reputation as one of Vancouver Island's most beautiful seaside communities. The town's residents — many of them avid gardeners — maintain some of the finest residential landscapes on the Island. This commitment to property care means irrigation isn't optional here; it's essential. The warm, dry summers that make Qualicum Beach such a pleasant place to live also mean that without proper watering, even established gardens can suffer.</p>
-      <p class="text-gray-400 leading-relaxed mb-6">We're based just minutes away in Coombs and have been servicing Qualicum Beach properties since our founding in 1990. We understand the mix of property types here — from heritage homes in the village centre with mature landscaping to newer developments and retirement communities with strata-managed systems. Our team designs, installs, and maintains irrigation systems that deliver the right amount of water to every corner of your property, efficiently and reliably.</p>
+      <h2 class="text-2xl font-bold text-gray-900 mb-4" style="font-family: Montserrat, sans-serif;">Keeping Qualicum Beach Gardens Thriving</h2>
+      <p class="text-gray-600 leading-relaxed mb-6">Qualicum Beach has earned its reputation as one of Vancouver Island's most beautiful seaside communities. The town's residents — many of them avid gardeners — maintain some of the finest residential landscapes on the Island. This commitment to property care means irrigation isn't optional here; it's essential. The warm, dry summers that make Qualicum Beach such a pleasant place to live also mean that without proper watering, even established gardens can suffer.</p>
+      <p class="text-gray-600 leading-relaxed mb-6">We're based just minutes away in Coombs and have been servicing Qualicum Beach properties since our founding in 1990. We understand the mix of property types here — from heritage homes in the village centre with mature landscaping to newer developments and retirement communities with strata-managed systems. Our team designs, installs, and maintains irrigation systems that deliver the right amount of water to every corner of your property, efficiently and reliably.</p>
 
-      <h2 class="text-2xl font-bold text-white mb-4 mt-10" style="font-family: Montserrat, sans-serif;">Services Available in Qualicum Beach</h2>
+      <h2 class="text-2xl font-bold text-gray-900 mb-4 mt-10" style="font-family: Montserrat, sans-serif;">Services Available in Qualicum Beach</h2>
       <div class="grid grid-cols-1 sm:grid-cols-2 gap-3 mb-10">
-        <a href={url('/services/spring-startups/')} class="flex items-center gap-2 text-gray-400 hover:text-lime-400 transition-colors p-3 rounded-lg hover:bg-white/5">
-          <svg class="w-4 h-4 text-lime-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg>
+        <a href={url('/services/spring-startups/')} class="flex items-center gap-2 text-gray-600 hover:text-brand-900 transition-colors p-3 rounded-lg hover:bg-brand-50">
+          <svg class="w-4 h-4 text-brand-700" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg>
           Spring Irrigation Start-Ups
         </a>
-        <a href={url('/services/winter-blowouts/')} class="flex items-center gap-2 text-gray-400 hover:text-lime-400 transition-colors p-3 rounded-lg hover:bg-white/5">
-          <svg class="w-4 h-4 text-lime-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg>
+        <a href={url('/services/winter-blowouts/')} class="flex items-center gap-2 text-gray-600 hover:text-brand-900 transition-colors p-3 rounded-lg hover:bg-brand-50">
+          <svg class="w-4 h-4 text-brand-700" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg>
           Winter Irrigation Blowouts
         </a>
-        <a href={url('/services/repairs/')} class="flex items-center gap-2 text-gray-400 hover:text-lime-400 transition-colors p-3 rounded-lg hover:bg-white/5">
-          <svg class="w-4 h-4 text-lime-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg>
+        <a href={url('/services/repairs/')} class="flex items-center gap-2 text-gray-600 hover:text-brand-900 transition-colors p-3 rounded-lg hover:bg-brand-50">
+          <svg class="w-4 h-4 text-brand-700" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg>
           Repairs & Service Calls
         </a>
-        <a href={url('/services/installations/')} class="flex items-center gap-2 text-gray-400 hover:text-lime-400 transition-colors p-3 rounded-lg hover:bg-white/5">
-          <svg class="w-4 h-4 text-lime-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg>
+        <a href={url('/services/installations/')} class="flex items-center gap-2 text-gray-600 hover:text-brand-900 transition-colors p-3 rounded-lg hover:bg-brand-50">
+          <svg class="w-4 h-4 text-brand-700" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg>
           New Sprinkler Installations
         </a>
-        <a href={url('/services/landscape-lighting/')} class="flex items-center gap-2 text-gray-400 hover:text-lime-400 transition-colors p-3 rounded-lg hover:bg-white/5">
-          <svg class="w-4 h-4 text-lime-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg>
+        <a href={url('/services/landscape-lighting/')} class="flex items-center gap-2 text-gray-600 hover:text-brand-900 transition-colors p-3 rounded-lg hover:bg-brand-50">
+          <svg class="w-4 h-4 text-brand-700" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg>
           Landscape Lighting
         </a>
-        <a href={url('/services/maintenance-plans/')} class="flex items-center gap-2 text-gray-400 hover:text-lime-400 transition-colors p-3 rounded-lg hover:bg-white/5">
-          <svg class="w-4 h-4 text-lime-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg>
+        <a href={url('/services/maintenance-plans/')} class="flex items-center gap-2 text-gray-600 hover:text-brand-900 transition-colors p-3 rounded-lg hover:bg-brand-50">
+          <svg class="w-4 h-4 text-brand-700" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg>
           Annual Maintenance Plans
         </a>
       </div>
 
-      <h2 class="text-2xl font-bold text-white mb-6" style="font-family: Montserrat, sans-serif;">Frequently Asked Questions</h2>
+      <h2 class="text-2xl font-bold text-gray-900 mb-6" style="font-family: Montserrat, sans-serif;">Frequently Asked Questions</h2>
       <FAQ items={faqs} />
     </div>
   </section>

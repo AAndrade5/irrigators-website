@@ -29,11 +29,11 @@ const faqs = [
   schema={schema}
 >
   <section class="relative overflow-hidden py-16 lg:py-20 px-4">
-    <div class="absolute inset-0 bg-dark-950"></div>
-    <div class="absolute inset-0 bg-gradient-to-br from-lime-500/8 via-transparent to-transparent"></div>
+    <div class="absolute inset-0 bg-cover bg-center bg-brand-900" style={`background-image: url('${import.meta.env.BASE_URL}images/heroes/hero-irrigation.jpg');`}></div>
+    <div class="absolute inset-0 bg-brand-900/75 backdrop-blur-[2px]"></div>
     <div class="relative max-w-7xl mx-auto">
       <nav class="text-gray-500 text-sm mb-4">
-        <a href={url('/')} class="hover:text-lime-400">Home</a> / <a href={url('/services/')} class="hover:text-lime-400">Services</a> / Repairs & Service Calls
+        <a href={url('/')} class="hover:text-brand-200">Home</a> / <a href={url('/services/')} class="hover:text-brand-200">Services</a> / Repairs & Service Calls
       </nav>
       <h1 class="text-4xl lg:text-5xl font-bold text-white mb-4" style="font-family: Montserrat, sans-serif;">Service Calls & System Repairs</h1>
       <p class="text-gray-400 text-lg max-w-2xl">Sprinkler not working? Broken heads, leaky valves, or electrical issues? We provide fast, reliable repair services across central Vancouver Island.</p>
@@ -42,37 +42,37 @@ const faqs = [
 
   <section class="py-16 lg:py-24 px-4">
     <div class="max-w-4xl mx-auto">
-      <h2 class="text-2xl font-bold text-white mb-4" style="font-family: Montserrat, sans-serif;">Fast, Expert Irrigation Repairs</h2>
-      <p class="text-gray-400 leading-relaxed mb-6">When your irrigation system breaks down, you need it fixed fast. A broken head wastes water. A leaky valve runs up your bill. A wiring fault leaves zones dry while your lawn suffers. Our technicians carry common parts on every truck and can diagnose and repair most issues in a single visit.</p>
+      <h2 class="text-2xl font-bold text-gray-900 mb-4" style="font-family: Montserrat, sans-serif;">Fast, Expert Irrigation Repairs</h2>
+      <p class="text-gray-600 leading-relaxed mb-6">When your irrigation system breaks down, you need it fixed fast. A broken head wastes water. A leaky valve runs up your bill. A wiring fault leaves zones dry while your lawn suffers. Our technicians carry common parts on every truck and can diagnose and repair most issues in a single visit.</p>
 
-      <p class="text-gray-400 leading-relaxed mb-6">With over 35 years servicing irrigation systems across Vancouver Island — from older residential setups in Nanaimo to modern commercial installations in Parksville and Qualicum Beach — we've seen and fixed every type of problem. We'll find the issue, explain it clearly, and get your system running right.</p>
+      <p class="text-gray-600 leading-relaxed mb-6">With over 35 years servicing irrigation systems across Vancouver Island — from older residential setups in Nanaimo to modern commercial installations in Parksville and Qualicum Beach — we've seen and fixed every type of problem. We'll find the issue, explain it clearly, and get your system running right.</p>
 
-      <h2 class="text-2xl font-bold text-white mb-4 mt-10" style="font-family: Montserrat, sans-serif;">Common Repairs We Handle</h2>
+      <h2 class="text-2xl font-bold text-gray-900 mb-4 mt-10" style="font-family: Montserrat, sans-serif;">Common Repairs We Handle</h2>
       <div class="space-y-4 mb-10">
         <div class="glass rounded-2xl p-5">
-          <h3 class="font-bold text-white mb-1">Broken Sprinkler Heads</h3>
-          <p class="text-gray-400 text-sm">Cracked, stuck, or misaligned heads are the most common issue. We replace and adjust heads for proper coverage and pattern.</p>
+          <h3 class="font-bold text-gray-900 mb-1">Broken Sprinkler Heads</h3>
+          <p class="text-gray-600 text-sm">Cracked, stuck, or misaligned heads are the most common issue. We replace and adjust heads for proper coverage and pattern.</p>
         </div>
         <div class="glass rounded-2xl p-5">
-          <h3 class="font-bold text-white mb-1">Leaky Valves & Diaphragms</h3>
-          <p class="text-gray-400 text-sm">Valves that won't open, won't close, or weep constantly. We rebuild or replace valve internals to restore proper operation.</p>
+          <h3 class="font-bold text-gray-900 mb-1">Leaky Valves & Diaphragms</h3>
+          <p class="text-gray-600 text-sm">Valves that won't open, won't close, or weep constantly. We rebuild or replace valve internals to restore proper operation.</p>
         </div>
         <div class="glass rounded-2xl p-5">
-          <h3 class="font-bold text-white mb-1">Controller & Wiring Issues</h3>
-          <p class="text-gray-400 text-sm">Dead zones, erratic schedules, or a controller that won't respond. We trace wiring faults and repair or replace controllers.</p>
+          <h3 class="font-bold text-gray-900 mb-1">Controller & Wiring Issues</h3>
+          <p class="text-gray-600 text-sm">Dead zones, erratic schedules, or a controller that won't respond. We trace wiring faults and repair or replace controllers.</p>
         </div>
         <div class="glass rounded-2xl p-5">
-          <h3 class="font-bold text-white mb-1">Pipe Leaks & Breaks</h3>
-          <p class="text-gray-400 text-sm">Underground leaks from frost damage, root intrusion, or old fittings. We locate and repair damaged sections.</p>
+          <h3 class="font-bold text-gray-900 mb-1">Pipe Leaks & Breaks</h3>
+          <p class="text-gray-600 text-sm">Underground leaks from frost damage, root intrusion, or old fittings. We locate and repair damaged sections.</p>
         </div>
         <div class="glass rounded-2xl p-5">
-          <h3 class="font-bold text-white mb-1">Low Pressure & Coverage Gaps</h3>
-          <p class="text-gray-400 text-sm">System not reaching full coverage? We diagnose pressure issues, nozzle blockages, and zone layout problems.</p>
+          <h3 class="font-bold text-gray-900 mb-1">Low Pressure & Coverage Gaps</h3>
+          <p class="text-gray-600 text-sm">System not reaching full coverage? We diagnose pressure issues, nozzle blockages, and zone layout problems.</p>
         </div>
       </div>
 
       <div class="mt-12">
-        <h2 class="text-2xl font-bold text-white mb-6" style="font-family: Montserrat, sans-serif;">Frequently Asked Questions</h2>
+        <h2 class="text-2xl font-bold text-gray-900 mb-6" style="font-family: Montserrat, sans-serif;">Frequently Asked Questions</h2>
         <FAQ items={faqs} />
       </div>
     </div>

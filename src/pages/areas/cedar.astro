@@ -29,11 +29,11 @@ const faqs = [
   schema={schema}
 >
   <section class="relative overflow-hidden py-16 lg:py-20 px-4">
-    <div class="absolute inset-0 bg-dark-950"></div>
-    <div class="absolute inset-0 bg-gradient-to-br from-lime-500/8 via-transparent to-transparent"></div>
+    <div class="absolute inset-0 bg-cover bg-center bg-brand-900" style={`background-image: url('${import.meta.env.BASE_URL}images/heroes/hero-irrigation.jpg');`}></div>
+    <div class="absolute inset-0 bg-brand-900/75 backdrop-blur-[2px]"></div>
     <div class="relative max-w-7xl mx-auto">
       <nav class="text-gray-500 text-sm mb-4">
-        <a href={url('/')} class="hover:text-lime-400">Home</a> / <a href={url('/areas/')} class="hover:text-lime-400">Service Areas</a> / Cedar
+        <a href={url('/')} class="hover:text-brand-200">Home</a> / <a href={url('/areas/')} class="hover:text-brand-200">Service Areas</a> / Cedar
       </nav>
       <h1 class="text-4xl lg:text-5xl font-bold text-white mb-4" style="font-family: Montserrat, sans-serif;">Irrigation Services in Cedar, BC</h1>
       <p class="text-gray-400 text-lg max-w-2xl">Cedar's mix of residential neighbourhoods and rural properties needs irrigation that fits the property. Professional installation, maintenance, and repairs from a team that services the area regularly.</p>
@@ -42,39 +42,39 @@ const faqs = [
 
   <section class="py-16 lg:py-24 px-4">
     <div class="max-w-4xl mx-auto">
-      <h2 class="text-2xl font-bold text-white mb-4" style="font-family: Montserrat, sans-serif;">Serving Cedar's Residential and Rural Properties</h2>
-      <p class="text-gray-400 leading-relaxed mb-6">Cedar is a community just south of Nanaimo with a pleasant mix of residential subdivisions and larger rural properties. The area has its own character — quieter than the city but well-connected, with many homeowners who take pride in their outdoor spaces. Whether you've got a standard residential lot with lawn and garden beds or a larger rural property with multiple watering needs, irrigation keeps everything looking its best through Vancouver Island's dry summers.</p>
-      <p class="text-gray-400 leading-relaxed mb-6">We service Cedar as part of our regular Nanaimo-area work and have been doing so since 1990. The local conditions — clay soil in many areas, a mix of municipal water and well water depending on your location, and the range from compact residential to multi-acre rural lots — are all familiar territory for our team. We design and maintain systems that match your property's specific needs, water source, and soil conditions.</p>
+      <h2 class="text-2xl font-bold text-gray-900 mb-4" style="font-family: Montserrat, sans-serif;">Serving Cedar's Residential and Rural Properties</h2>
+      <p class="text-gray-600 leading-relaxed mb-6">Cedar is a community just south of Nanaimo with a pleasant mix of residential subdivisions and larger rural properties. The area has its own character — quieter than the city but well-connected, with many homeowners who take pride in their outdoor spaces. Whether you've got a standard residential lot with lawn and garden beds or a larger rural property with multiple watering needs, irrigation keeps everything looking its best through Vancouver Island's dry summers.</p>
+      <p class="text-gray-600 leading-relaxed mb-6">We service Cedar as part of our regular Nanaimo-area work and have been doing so since 1990. The local conditions — clay soil in many areas, a mix of municipal water and well water depending on your location, and the range from compact residential to multi-acre rural lots — are all familiar territory for our team. We design and maintain systems that match your property's specific needs, water source, and soil conditions.</p>
 
-      <h2 class="text-2xl font-bold text-white mb-4 mt-10" style="font-family: Montserrat, sans-serif;">Services Available in Cedar</h2>
+      <h2 class="text-2xl font-bold text-gray-900 mb-4 mt-10" style="font-family: Montserrat, sans-serif;">Services Available in Cedar</h2>
       <div class="grid grid-cols-1 sm:grid-cols-2 gap-3 mb-10">
-        <a href={url('/services/spring-startups/')} class="flex items-center gap-2 text-gray-400 hover:text-lime-400 transition-colors p-3 rounded-lg hover:bg-white/5">
-          <svg class="w-4 h-4 text-lime-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg>
+        <a href={url('/services/spring-startups/')} class="flex items-center gap-2 text-gray-600 hover:text-brand-900 transition-colors p-3 rounded-lg hover:bg-brand-50">
+          <svg class="w-4 h-4 text-brand-700" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg>
           Spring Irrigation Start-Ups
         </a>
-        <a href={url('/services/winter-blowouts/')} class="flex items-center gap-2 text-gray-400 hover:text-lime-400 transition-colors p-3 rounded-lg hover:bg-white/5">
-          <svg class="w-4 h-4 text-lime-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg>
+        <a href={url('/services/winter-blowouts/')} class="flex items-center gap-2 text-gray-600 hover:text-brand-900 transition-colors p-3 rounded-lg hover:bg-brand-50">
+          <svg class="w-4 h-4 text-brand-700" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg>
           Winter Irrigation Blowouts
         </a>
-        <a href={url('/services/repairs/')} class="flex items-center gap-2 text-gray-400 hover:text-lime-400 transition-colors p-3 rounded-lg hover:bg-white/5">
-          <svg class="w-4 h-4 text-lime-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg>
+        <a href={url('/services/repairs/')} class="flex items-center gap-2 text-gray-600 hover:text-brand-900 transition-colors p-3 rounded-lg hover:bg-brand-50">
+          <svg class="w-4 h-4 text-brand-700" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg>
           Repairs & Service Calls
         </a>
-        <a href={url('/services/installations/')} class="flex items-center gap-2 text-gray-400 hover:text-lime-400 transition-colors p-3 rounded-lg hover:bg-white/5">
-          <svg class="w-4 h-4 text-lime-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg>
+        <a href={url('/services/installations/')} class="flex items-center gap-2 text-gray-600 hover:text-brand-900 transition-colors p-3 rounded-lg hover:bg-brand-50">
+          <svg class="w-4 h-4 text-brand-700" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg>
           New Sprinkler Installations
         </a>
-        <a href={url('/services/landscape-lighting/')} class="flex items-center gap-2 text-gray-400 hover:text-lime-400 transition-colors p-3 rounded-lg hover:bg-white/5">
-          <svg class="w-4 h-4 text-lime-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg>
+        <a href={url('/services/landscape-lighting/')} class="flex items-center gap-2 text-gray-600 hover:text-brand-900 transition-colors p-3 rounded-lg hover:bg-brand-50">
+          <svg class="w-4 h-4 text-brand-700" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg>
           Landscape Lighting
         </a>
-        <a href={url('/services/maintenance-plans/')} class="flex items-center gap-2 text-gray-400 hover:text-lime-400 transition-colors p-3 rounded-lg hover:bg-white/5">
-          <svg class="w-4 h-4 text-lime-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg>
+        <a href={url('/services/maintenance-plans/')} class="flex items-center gap-2 text-gray-600 hover:text-brand-900 transition-colors p-3 rounded-lg hover:bg-brand-50">
+          <svg class="w-4 h-4 text-brand-700" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg>
           Annual Maintenance Plans
         </a>
       </div>
 
-      <h2 class="text-2xl font-bold text-white mb-6" style="font-family: Montserrat, sans-serif;">Frequently Asked Questions</h2>
+      <h2 class="text-2xl font-bold text-gray-900 mb-6" style="font-family: Montserrat, sans-serif;">Frequently Asked Questions</h2>
       <FAQ items={faqs} />
     </div>
   </section>

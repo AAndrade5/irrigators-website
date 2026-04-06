@@ -29,11 +29,11 @@ const faqs = [
   schema={schema}
 >
   <section class="relative overflow-hidden py-16 lg:py-20 px-4">
-    <div class="absolute inset-0 bg-dark-950"></div>
-    <div class="absolute inset-0 bg-gradient-to-br from-lime-500/8 via-transparent to-transparent"></div>
+    <div class="absolute inset-0 bg-cover bg-center bg-brand-900" style={`background-image: url('${import.meta.env.BASE_URL}images/heroes/hero-irrigation.jpg');`}></div>
+    <div class="absolute inset-0 bg-brand-900/75 backdrop-blur-[2px]"></div>
     <div class="relative max-w-7xl mx-auto">
       <nav class="text-gray-500 text-sm mb-4">
-        <a href={url('/')} class="hover:text-lime-400">Home</a> / <a href={url('/areas/')} class="hover:text-lime-400">Service Areas</a> / Ladysmith
+        <a href={url('/')} class="hover:text-brand-200">Home</a> / <a href={url('/areas/')} class="hover:text-brand-200">Service Areas</a> / Ladysmith
       </nav>
       <h1 class="text-4xl lg:text-5xl font-bold text-white mb-4" style="font-family: Montserrat, sans-serif;">Irrigation Services in Ladysmith, BC</h1>
       <p class="text-gray-400 text-lg max-w-2xl">Ladysmith's heritage charm and growing community deserve reliable irrigation. From historic homes in the town centre to new developments, we keep Ladysmith properties green and well-watered.</p>
@@ -42,39 +42,39 @@ const faqs = [
 
   <section class="py-16 lg:py-24 px-4">
     <div class="max-w-4xl mx-auto">
-      <h2 class="text-2xl font-bold text-white mb-4" style="font-family: Montserrat, sans-serif;">Heritage Town, Modern Irrigation</h2>
-      <p class="text-gray-400 leading-relaxed mb-6">Ladysmith is a historic waterfront town with a vibrant arts community, beautifully maintained heritage homes, and a growing number of new residential developments. As the southern limit of our service area, Ladysmith holds a special place in our route — it's the gateway to our coverage zone, and we've been proudly servicing properties here since 1990.</p>
-      <p class="text-gray-400 leading-relaxed mb-6">The town's mix of heritage homes with established gardens and newer construction with fresh landscaping creates diverse irrigation needs. Older properties may have mature trees with extensive root systems, narrow beds between walkways, or original hardscaping that needs to be worked around. Newer homes often need complete irrigation systems designed from scratch. We handle both with equal care, designing systems that deliver efficient watering while respecting the property's character. Ladysmith's sloped terrain in some areas also means we pay close attention to pressure management and runoff prevention.</p>
+      <h2 class="text-2xl font-bold text-gray-900 mb-4" style="font-family: Montserrat, sans-serif;">Heritage Town, Modern Irrigation</h2>
+      <p class="text-gray-600 leading-relaxed mb-6">Ladysmith is a historic waterfront town with a vibrant arts community, beautifully maintained heritage homes, and a growing number of new residential developments. As the southern limit of our service area, Ladysmith holds a special place in our route — it's the gateway to our coverage zone, and we've been proudly servicing properties here since 1990.</p>
+      <p class="text-gray-600 leading-relaxed mb-6">The town's mix of heritage homes with established gardens and newer construction with fresh landscaping creates diverse irrigation needs. Older properties may have mature trees with extensive root systems, narrow beds between walkways, or original hardscaping that needs to be worked around. Newer homes often need complete irrigation systems designed from scratch. We handle both with equal care, designing systems that deliver efficient watering while respecting the property's character. Ladysmith's sloped terrain in some areas also means we pay close attention to pressure management and runoff prevention.</p>
 
-      <h2 class="text-2xl font-bold text-white mb-4 mt-10" style="font-family: Montserrat, sans-serif;">Services Available in Ladysmith</h2>
+      <h2 class="text-2xl font-bold text-gray-900 mb-4 mt-10" style="font-family: Montserrat, sans-serif;">Services Available in Ladysmith</h2>
       <div class="grid grid-cols-1 sm:grid-cols-2 gap-3 mb-10">
-        <a href={url('/services/spring-startups/')} class="flex items-center gap-2 text-gray-400 hover:text-lime-400 transition-colors p-3 rounded-lg hover:bg-white/5">
-          <svg class="w-4 h-4 text-lime-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg>
+        <a href={url('/services/spring-startups/')} class="flex items-center gap-2 text-gray-600 hover:text-brand-900 transition-colors p-3 rounded-lg hover:bg-brand-50">
+          <svg class="w-4 h-4 text-brand-700" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg>
           Spring Irrigation Start-Ups
         </a>
-        <a href={url('/services/winter-blowouts/')} class="flex items-center gap-2 text-gray-400 hover:text-lime-400 transition-colors p-3 rounded-lg hover:bg-white/5">
-          <svg class="w-4 h-4 text-lime-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg>
+        <a href={url('/services/winter-blowouts/')} class="flex items-center gap-2 text-gray-600 hover:text-brand-900 transition-colors p-3 rounded-lg hover:bg-brand-50">
+          <svg class="w-4 h-4 text-brand-700" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg>
           Winter Irrigation Blowouts
         </a>
-        <a href={url('/services/repairs/')} class="flex items-center gap-2 text-gray-400 hover:text-lime-400 transition-colors p-3 rounded-lg hover:bg-white/5">
-          <svg class="w-4 h-4 text-lime-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg>
+        <a href={url('/services/repairs/')} class="flex items-center gap-2 text-gray-600 hover:text-brand-900 transition-colors p-3 rounded-lg hover:bg-brand-50">
+          <svg class="w-4 h-4 text-brand-700" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg>
           Repairs & Service Calls
         </a>
-        <a href={url('/services/installations/')} class="flex items-center gap-2 text-gray-400 hover:text-lime-400 transition-colors p-3 rounded-lg hover:bg-white/5">
-          <svg class="w-4 h-4 text-lime-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg>
+        <a href={url('/services/installations/')} class="flex items-center gap-2 text-gray-600 hover:text-brand-900 transition-colors p-3 rounded-lg hover:bg-brand-50">
+          <svg class="w-4 h-4 text-brand-700" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg>
           New Sprinkler Installations
         </a>
-        <a href={url('/services/landscape-lighting/')} class="flex items-center gap-2 text-gray-400 hover:text-lime-400 transition-colors p-3 rounded-lg hover:bg-white/5">
-          <svg class="w-4 h-4 text-lime-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg>
+        <a href={url('/services/landscape-lighting/')} class="flex items-center gap-2 text-gray-600 hover:text-brand-900 transition-colors p-3 rounded-lg hover:bg-brand-50">
+          <svg class="w-4 h-4 text-brand-700" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg>
           Landscape Lighting
         </a>
-        <a href={url('/services/maintenance-plans/')} class="flex items-center gap-2 text-gray-400 hover:text-lime-400 transition-colors p-3 rounded-lg hover:bg-white/5">
-          <svg class="w-4 h-4 text-lime-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg>
+        <a href={url('/services/maintenance-plans/')} class="flex items-center gap-2 text-gray-600 hover:text-brand-900 transition-colors p-3 rounded-lg hover:bg-brand-50">
+          <svg class="w-4 h-4 text-brand-700" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg>
           Annual Maintenance Plans
         </a>
       </div>
 
-      <h2 class="text-2xl font-bold text-white mb-6" style="font-family: Montserrat, sans-serif;">Frequently Asked Questions</h2>
+      <h2 class="text-2xl font-bold text-gray-900 mb-6" style="font-family: Montserrat, sans-serif;">Frequently Asked Questions</h2>
       <FAQ items={faqs} />
     </div>
   </section>
