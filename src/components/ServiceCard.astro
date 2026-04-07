@@ -4,15 +4,24 @@ interface Props {
   description: string;
   href: string;
   cta?: string;
+  image?: string;
+  imageAlt?: string;
 }
-const { title, description, href, cta = "Learn More" } = Astro.props;
+const { title, description, href, cta = "Learn More", image, imageAlt } = Astro.props;
 ---
 
-<a href={href} class="group block glass rounded-2xl p-6 hover:shadow-xl hover:shadow-brand-900/10 transition-all duration-300 border border-white/30">
-  <h3 class="text-xl font-bold text-gray-900 mb-2 group-hover:text-brand-900 transition-colors" style="font-family: Montserrat, sans-serif;">{title}</h3>
-  <p class="text-gray-600 text-sm leading-relaxed mb-4">{description}</p>
-  <span class="text-brand-900 font-semibold text-sm inline-flex items-center gap-1 group-hover:gap-2 transition-all">
-    {cta}
-    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg>
-  </span>
+<a href={href} class="group block glass rounded-2xl overflow-hidden hover:shadow-xl hover:shadow-brand-900/10 transition-all duration-300 border border-white/30">
+  {image && (
+    <div class="aspect-[16/10] overflow-hidden">
+      <img src={image} alt={imageAlt || title} loading="lazy" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" />
+    </div>
+  )}
+  <div class="p-6">
+    <h3 class="text-xl font-bold text-gray-900 mb-2 group-hover:text-brand-900 transition-colors" style="font-family: Montserrat, sans-serif;">{title}</h3>
+    <p class="text-gray-600 text-sm leading-relaxed mb-4">{description}</p>
+    <span class="text-brand-900 font-semibold text-sm inline-flex items-center gap-1 group-hover:gap-2 transition-all">
+      {cta}
+      <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg>
+    </span>
+  </div>
 </a>
